@@ -231,6 +231,26 @@
     cursor: pointer;
   }
 
+  .field-error {
+    display: none;
+    font-size: 12px;
+    color: #D94A38;
+    margin-top: -8px;
+    padding-left: 4px;
+  }
+
+  .field-error.visible {
+    display: block;
+  }
+
+  .hero-form input.invalid {
+    border-color: #D94A38;
+  }
+
+  .hero-form input.valid {
+    border-color: #3CB371;
+  }
+
   /* ── Section base ── */
   .section {
     padding: 100px 32px;
@@ -795,10 +815,12 @@
       <h1>Humyn Labs vs<br>Scale AI</h1>
       <p class="hero-body">Scale AI is the largest name in AI training data. Humyn Labs is the independent alternative: a complete human data pipeline for training-ready data across voice, image, video, audio, and real-world models, built by verified domain experts, with no ties to any frontier lab. Here is how the two compare.</p>
     </div>
-    <div class="hero-form">
-      <input type="text" placeholder="Full Name" aria-label="Full Name">
-      <input type="email" placeholder="Work Email" aria-label="Work Email">
-      <input type="tel" placeholder="Phone" aria-label="Phone">
+    <div class="hero-form" id="hero-form">
+      <input type="text" placeholder="Full Name" aria-label="Full Name" id="heroName">
+      <input type="email" placeholder="Work Email" aria-label="Work Email" id="heroEmail">
+      <span class="field-error" id="emailError">Please enter a valid work email</span>
+      <input type="tel" placeholder="Phone (e.g. +1 555 123 4567)" aria-label="Phone" id="heroPhone">
+      <span class="field-error" id="phoneError">Please enter a valid phone number</span>
       <p class="form-terms">By subscribing you agree with the <a href="#">Terms and Privacy Policy</a></p>
       <a href="https://humynlabs.ai/datasets" target="_blank" rel="noopener" class="btn-cta btn-cta-disabled" id="heroCtaBtn" style="display:block;text-align:center;">View Egocentric Datasets ↗</a>
     </div>
@@ -982,7 +1004,7 @@
 <section class="cta-strip" id="cta">
   <h2>See what a complete human data pipeline looks like</h2>
   <p class="cta-detail">Tell us your modality, volume, and domain. We scope a custom project within 48 hours and deliver training-ready data through a verified first-party network of domain experts.</p>
-  <a href="https://humynlabs.ai/datasets" target="_blank" rel="noopener" class="btn-orange">View Egocentric Datasets ↗</a>
+  <a href="#hero-form" class="btn-orange" id="bottomCtaBtn">View Egocentric Datasets ↗</a>
 </section>
 
 <!-- FAQs -->
@@ -1049,20 +1071,67 @@
 </section>
 
 <script>
-  // Hero form validation — enable CTA only when all fields are filled
+  // Hero form validation — email & phone format checks, enable CTA only when all valid
   (function() {
-    var form = document.querySelector('.hero-form');
-    if (!form) return;
-    var inputs = form.querySelectorAll('input');
+    var nameInput = document.getElementById('heroName');
+    var emailInput = document.getElementById('heroEmail');
+    var phoneInput = document.getElementById('heroPhone');
+    var emailError = document.getElementById('emailError');
+    var phoneError = document.getElementById('phoneError');
     var cta = document.getElementById('heroCtaBtn');
-    if (!cta) return;
+    if (!nameInput || !emailInput || !phoneInput || !cta) return;
+
+    // Email: standard format, reject free providers to encourage work emails
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+    // Phone: at least 7 digits, allows +, spaces, dashes, parens
+    var phoneRegex = /^[+]?[\d\s\-().]{7,20}$/;
+
+    function isEmailValid(v) {
+      return emailRegex.test(v.trim());
+    }
+
+    function isPhoneValid(v) {
+      var digits = v.replace(/\D/g, '');
+      return phoneRegex.test(v.trim()) && digits.length >= 7;
+    }
+
+    function setFieldState(input, errorEl, isValid, isEmpty) {
+      if (isEmpty) {
+        input.classList.remove('invalid', 'valid');
+        errorEl.classList.remove('visible');
+      } else if (isValid) {
+        input.classList.remove('invalid');
+        input.classList.add('valid');
+        errorEl.classList.remove('visible');
+      } else {
+        input.classList.remove('valid');
+        input.classList.add('invalid');
+        errorEl.classList.add('visible');
+      }
+    }
 
     function checkFields() {
-      var allFilled = true;
-      inputs.forEach(function(inp) {
-        if (!inp.value.trim()) allFilled = false;
-      });
-      if (allFilled) {
+      var name = nameInput.value.trim();
+      var email = emailInput.value.trim();
+      var phone = phoneInput.value.trim();
+
+      var nameOk = name.length > 0;
+      var emailOk = isEmailValid(email);
+      var phoneOk = isPhoneValid(phone);
+
+      // Name just needs to be non-empty
+      if (name.length > 0) {
+        nameInput.classList.add('valid');
+        nameInput.classList.remove('invalid');
+      } else {
+        nameInput.classList.remove('valid', 'invalid');
+      }
+
+      setFieldState(emailInput, emailError, emailOk, email.length === 0);
+      setFieldState(phoneInput, phoneError, phoneOk, phone.length === 0);
+
+      if (nameOk && emailOk && phoneOk) {
         cta.classList.remove('btn-cta-disabled');
         cta.classList.add('btn-cta-enabled');
       } else {
@@ -1071,9 +1140,19 @@
       }
     }
 
-    inputs.forEach(function(inp) {
-      inp.addEventListener('input', checkFields);
-    });
+    nameInput.addEventListener('input', checkFields);
+    emailInput.addEventListener('input', checkFields);
+    phoneInput.addEventListener('input', checkFields);
+
+    // Also scroll + focus name field when bottom CTA is clicked
+    var bottomCta = document.getElementById('bottomCtaBtn');
+    if (bottomCta) {
+      bottomCta.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('hero-form').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(function() { nameInput.focus(); }, 500);
+      });
+    }
 
     checkFields();
   })();
