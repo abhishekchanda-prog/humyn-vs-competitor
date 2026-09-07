@@ -1097,14 +1097,6 @@
     phoneInput.addEventListener('input', checkFields);
 
     // Also scroll + focus name field when bottom CTA is clicked
-    var bottomCta = document.getElementById('bottomCtaBtn');
-    if (bottomCta) {
-      bottomCta.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.getElementById('hero-form').scrollIntoView({ behavior: 'smooth', block: 'center' });
-        setTimeout(function() { nameInput.focus(); }, 500);
-      });
-    }
 
     checkFields();
   })();
