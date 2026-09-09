@@ -95,9 +95,11 @@ body {
 
 .hero-visual {
   flex: 1 1 42%;
+  align-self: stretch;
+}
+.hero-visual-inner {
   position: sticky;
   top: 0;
-  align-self: flex-start;
   height: 100vh;
   overflow: hidden;
   background: var(--dark);
@@ -120,9 +122,12 @@ body {
 @media (max-width: 860px) {
   .page { flex-direction: column; }
   .hero-visual {
+    align-self: auto;
+    flex: none;
+  }
+  .hero-visual-inner {
     position: static;
     height: 220px;
-    flex: none;
   }
   .wrap {
     max-width: 100%;
@@ -348,7 +353,9 @@ footer {
 
 <div class="page">
   <div class="hero-visual">
-    <img src="./hero.png" alt="Humyn EgoS1">
+    <div class="hero-visual-inner">
+      <img src="./hero.png" alt="Humyn EgoS1">
+    </div>
   </div>
   <div class="wrap">
   <div id="formView">
