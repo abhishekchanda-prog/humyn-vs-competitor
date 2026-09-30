@@ -193,7 +193,7 @@ form {
   margin-bottom: 8px;
 }
 .req { color: var(--accent); }
-.field input, .field textarea {
+.field input, .field textarea, .field select {
   width: 100%;
   font: inherit;
   font-size: 15px;
@@ -204,12 +204,23 @@ form {
   padding: 12px 14px;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
-.field input:focus, .field textarea:focus {
+.field input:focus, .field textarea:focus, .field select:focus {
   outline: none;
   border-color: var(--accent);
   box-shadow: 0 0 0 3px var(--accent-soft);
 }
 .field textarea { min-height: 96px; resize: vertical; }
+.field select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  padding-right: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%238A847B' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+.field select:invalid { color: var(--ink-soft); }
+.field select option { color: var(--ink); background: var(--surface); }
 .row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 @media (max-width: 560px) { .row { grid-template-columns: 1fr; } }
 
@@ -402,6 +413,16 @@ footer {
         <textarea id="useCase" required placeholder="Briefly describe your use case for Humyn EgoS1"></textarea>
       </div>
       <div class="field">
+        <label for="favFeature">Which feature are you most excited about? <span class="req">*</span></label>
+        <select id="favFeature" required>
+          <option value="" disabled selected>Select a feature</option>
+          <option value="Form factor (cap)">Form factor (cap)</option>
+          <option value="1-microsecond IMU sync">1-microsecond IMU sync</option>
+          <option value="150° Diagonal FOV">150° Diagonal FOV</option>
+          <option value="Weight (127 grams)">Weight (127 grams)</option>
+        </select>
+      </div>
+      <div class="field">
         <label for="orderSize">Potential Order Size (number of units) <span class="req">*</span></label>
         <input type="text" id="orderSize" required placeholder="e.g. 10-25 units">
       </div>
@@ -445,10 +466,11 @@ form.addEventListener('submit', function (e) {
   const contactNumber = document.getElementById('contactNumber').value.trim();
   const email = document.getElementById('email').value.trim();
   const useCase = document.getElementById('useCase').value.trim();
+  const favFeature = document.getElementById('favFeature').value;
   const orderSize = document.getElementById('orderSize').value.trim();
   const ack = document.getElementById('ack').checked;
 
-  if (!fullName || !companyName || !contactNumber || !email || !useCase || !orderSize || !ack) {
+  if (!fullName || !companyName || !contactNumber || !email || !useCase || !favFeature || !orderSize || !ack) {
     errorMsg.style.display = 'block';
     return;
   }
@@ -457,7 +479,7 @@ form.addEventListener('submit', function (e) {
   submitBtn.disabled = true;
   submitBtn.textContent = 'Submitting…';
 
-  const payload = { fullName, companyName, contactNumber, email, useCase, orderSize };
+  const payload = { fullName, companyName, contactNumber, email, useCase, favFeature, orderSize };
 
   fetch(GAS_URL, {
     method: 'POST',
