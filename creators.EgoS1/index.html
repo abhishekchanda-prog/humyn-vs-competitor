@@ -86,10 +86,55 @@ body {
   letter-spacing: 0.02em;
 }
 
+.page {
+  display: flex;
+  align-items: stretch;
+  min-height: 100vh;
+}
+
+.hero-visual {
+  flex: 1 1 42%;
+  align-self: stretch;
+  position: relative;
+  overflow: clip;
+  background: var(--dark);
+}
+.hero-visual-inner {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+.hero-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+}
+
 .wrap {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 48px 24px 80px;
+  flex: 1 1 58%;
+  max-width: 640px;
+  margin: 0;
+  padding: 48px 40px 80px;
+}
+
+@media (max-width: 860px) {
+  .page { flex-direction: column; }
+  .hero-visual {
+    align-self: auto;
+    flex: none;
+    height: 220px;
+  }
+  .hero-visual-inner {
+    position: absolute;
+    inset: 0;
+    height: auto;
+  }
+  .wrap {
+    max-width: 100%;
+    padding: 36px 24px 64px;
+  }
 }
 
 .eyebrow {
@@ -104,7 +149,7 @@ body {
 h1 {
   font-family: 'Rethink Sans', sans-serif;
   font-weight: 800;
-  font-size: min(36px, calc((100vw - 48px) / 18.5));
+  font-size: min(30px, calc((58vw - 80px) / 18.5));
   line-height: 1.12;
   letter-spacing: -0.01em;
   margin: 0 0 14px;
@@ -164,6 +209,7 @@ form {
 .field textarea { min-height: 90px; resize: vertical; }
 .row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 @media (max-width: 560px) { .row { grid-template-columns: 1fr; } }
+@media (max-width: 860px) { h1 { font-size: min(30px, calc((100vw - 48px) / 18.5)); } }
 
 .field-links { display: flex; flex-direction: column; gap: 10px; }
 
@@ -362,6 +408,12 @@ footer {
   <span>humynlabs.ai</span>
 </nav>
 
+<div class="page">
+  <div class="hero-visual">
+    <div class="hero-visual-inner">
+      <img src="../form.HumynEgoS1/hero.png" alt="Humyn EgoS1">
+    </div>
+  </div>
 <div class="wrap">
   <div id="formView">
     <h1>Humyn egoS1: Early Access For Creators</h1>
@@ -457,6 +509,7 @@ footer {
     <h2>Thanks — we've got it</h2>
     <p>Your application for the Humyn EgoS1 Creator Program has been submitted. We'll follow up if you're selected.</p>
   </div>
+</div>
 </div>
 
 <footer>Humyn Labs &middot; EgoS1 Creator Program</footer>
