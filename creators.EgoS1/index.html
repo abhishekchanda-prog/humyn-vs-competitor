@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Humyn egoS1: Early Access For Creators</title>
-<meta name="description" content="Humyn EgoS1 just opened up for Early Access, exclusively for creators. Get your hands on it and be the first to cover it.">
+<title>Humyn egoS1: Early Access</title>
+<meta name="description" content="egoS1 is open to a small group of Physical AI and robotics researchers and creators for Early Access. Test it on your own work and share what you find.">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://abhishekchanda-prog.github.io/humyn-vs-competitor/creators.EgoS1/">
-<meta property="og:title" content="Humyn egoS1: Early Access For Creators">
-<meta property="og:description" content="Humyn EgoS1 just opened up for Early Access, exclusively for creators. Get your hands on it and be the first to cover it.">
+<meta property="og:title" content="Humyn egoS1: Early Access">
+<meta property="og:description" content="egoS1 is open to a small group of Physical AI and robotics researchers and creators for Early Access. Test it on your own work and share what you find.">
 <meta property="og:image" content="https://abhishekchanda-prog.github.io/humyn-vs-competitor/form.HumynEgoS1/og-image.jpg">
 <meta property="og:image:width" content="1600">
 <meta property="og:image:height" content="900">
 <meta property="og:site_name" content="Humyn Labs">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Humyn egoS1: Early Access For Creators">
-<meta name="twitter:description" content="Humyn EgoS1 just opened up for Early Access, exclusively for creators. Get your hands on it and be the first to cover it.">
+<meta name="twitter:title" content="Humyn egoS1: Early Access">
+<meta name="twitter:description" content="egoS1 is open to a small group of Physical AI and robotics researchers and creators for Early Access. Test it on your own work and share what you find.">
 <meta name="twitter:image" content="https://abhishekchanda-prog.github.io/humyn-vs-competitor/form.HumynEgoS1/og-image.jpg">
 
 <style>
@@ -321,6 +321,66 @@ button[type="submit"]:disabled { opacity: 0.6; cursor: not-allowed; }
 .success h2 { font-family: 'Rethink Sans', sans-serif; font-weight: 800; font-size: 22px; margin: 0 0 10px; }
 .success p { color: var(--ink-soft); font-size: 14.5px; max-width: 42ch; margin: 0 auto; line-height: 1.6; }
 
+.subhead {
+  font-family: 'Rethink Sans', sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 1.35;
+  margin: 0 0 12px;
+  color: var(--ink);
+}
+.intro + .intro { margin-top: -22px; }
+.intro a, .intro-sub a { color: var(--accent); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.intro-sub {
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.6;
+  margin: -20px 0 36px;
+}
+.field .hint-inline { text-transform: none; letter-spacing: 0; font-weight: 500; color: var(--ink-soft); }
+.optional { text-transform: none; letter-spacing: 0; font-weight: 500; }
+.field select {
+  width: 100%;
+  font: inherit;
+  font-size: 15px;
+  color: var(--ink);
+  background-color: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 40px 12px 14px;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%238A847B' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.field select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.field select:invalid { color: var(--ink-soft); }
+.field select option { color: var(--ink); background: var(--surface); }
+.choices { display: flex; flex-wrap: wrap; gap: 8px; }
+.field .choice { position: relative; display: inline-block; margin: 0; text-transform: none; letter-spacing: 0; font-weight: 500; color: var(--ink); font-size: 14px; }
+.choice input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.choice span {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1.3;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 9px 14px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+  user-select: none;
+}
+.choice span:hover { border-color: var(--ink-soft); }
+.choice input:checked + span { background: var(--accent-soft); border-color: var(--accent); color: var(--accent-ink); font-weight: 600; }
+.choice input:focus-visible + span { box-shadow: 0 0 0 3px var(--accent-soft); border-color: var(--accent); }
+.other-input { margin-top: 10px; display: none; }
+.other-input.show { display: block; }
+
 footer {
   text-align: center;
   color: var(--ink-soft);
@@ -411,105 +471,137 @@ footer {
 <div class="page">
   <div class="hero-visual">
     <div class="hero-visual-inner">
-      <img src="../form.HumynEgoS1/hero.png" alt="Humyn EgoS1">
+      <img src="../form.HumynEgoS1/hero.png" alt="Humyn egoS1">
     </div>
   </div>
 <div class="wrap">
   <div id="formView">
-    <h1>Humyn egoS1: Early Access For Creators</h1>
-    <p class="intro">If Physical AI or Robotics is within your POV, Humyn egoS1 just opened up for Early Access exclusively for creators.<br><br>Get your hands on it and be the first to cover it. Fill out this form to collaborate with us.</p>
+    <h1>Humyn egoS1: Early Access</h1>
+    <p class="subhead">Try Humyn egoS1 in your research</p>
+    <p class="intro">If Physical AI or robotics is your area of expertise, egoS1 is open to a small group of researchers and creators for Early Access.</p>
+    <p class="intro">Test it on your own work and share what you find. Early kits are limited.</p>
+    <p class="intro-sub">Heard about egoS1 and want to <a href="https://abhishekchanda-prog.github.io/humyn-vs-competitor/form.HumynEgoS1/" target="_blank" rel="noopener">register</a>?</p>
 
     <form id="creatorForm" novalidate>
       <div class="row">
         <div class="field">
-          <label for="fullName">Name <span class="req">*</span></label>
+          <label for="fullName">Full name <span class="req">*</span></label>
           <input type="text" id="fullName" required autocomplete="name">
         </div>
         <div class="field">
-          <label for="handle">Handle <span class="req">*</span></label>
-          <div class="hint">Link to the account you'd create with</div>
-          <input type="text" id="handle" required placeholder="e.g. https://x.com/yourhandle">
+          <label for="email">Email <span class="req">*</span></label>
+          <input type="email" id="email" required autocomplete="email">
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="institution">Institution or lab <span class="req">*</span></label>
+          <input type="text" id="institution" required autocomplete="organization">
+        </div>
+        <div class="field">
+          <label for="role">Your role <span class="req">*</span></label>
+          <select id="role" required>
+          <option value="" disabled selected>Select your role</option>
+          <option value="Researcher">Researcher</option>
+          <option value="Robotics or model engineer">Robotics or model engineer</option>
+          <option value="Lab lead">Lab lead</option>
+          <option value="PhD student">PhD student</option>
+          <option value="Other">Other</option>
+          </select>
+          <input type="text" id="roleOther" class="other-input" placeholder="Your role">
         </div>
       </div>
 
       <div class="field">
         <label for="location">Where you're based <span class="req">*</span></label>
-        <div class="hint">City / country — we'll ask for your full shipping address only if selected</div>
+        <div class="hint">City / country. We'll ask for a full shipping address only if you're selected.</div>
         <input type="text" id="location" required placeholder="e.g. Bengaluru, India">
       </div>
 
       <div class="field">
-        <label>3 pieces of your existing content about physical AI, robotics, or embodied AI <span class="req">*</span></label>
-        <div class="field-links">
-          <input type="url" id="contentLink1" required placeholder="Link 1">
-          <input type="url" id="contentLink2" required placeholder="Link 2">
-          <input type="url" id="contentLink3" required placeholder="Link 3">
+        <label for="researchArea">Research area <span class="req">*</span></label>
+        <input type="text" id="researchArea" required>
+      </div>
+
+      <div class="field">
+        <label>How would you use egoS1? <span class="req">*</span> <span class="hint-inline">(select all that apply)</span></label>
+        <div class="choices">
+          <label class="choice"><input type="checkbox" name="useCases" value="Hand and object tracking"><span>Hand and object tracking</span></label>
+          <label class="choice"><input type="checkbox" name="useCases" value="SLAM and mapping"><span>SLAM and mapping</span></label>
+          <label class="choice"><input type="checkbox" name="useCases" value="Training data for policies or VLAs"><span>Training data for policies or VLAs</span></label>
+          <label class="choice"><input type="checkbox" name="useCases" value="Dataset collection"><span>Dataset collection</span></label>
+          <label class="choice"><input type="checkbox" name="useCases" value="Benchmarking capture hardware"><span>Benchmarking capture hardware</span></label>
+          <label class="choice"><input type="checkbox" name="useCases" value="Other"><span>Other</span></label>
+        </div>
+        <input type="text" id="useOther" class="other-input" placeholder="How else would you use it?">
+      </div>
+
+      <div class="field">
+        <label for="experiment">What would you run with it? <span class="req">*</span></label>
+        <div class="hint">A short description of the experiment or dataset</div>
+        <textarea id="experiment" required></textarea>
+      </div>
+
+      <div class="field">
+        <label>How many units could you use? <span class="req">*</span></label>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="units" value="1"><span>1</span></label>
+          <label class="choice"><input type="radio" name="units" value="2 to 3"><span>2 to 3</span></label>
+          <label class="choice"><input type="radio" name="units" value="4 to 10"><span>4 to 10</span></label>
+          <label class="choice"><input type="radio" name="units" value="More than 10"><span>More than 10</span></label>
         </div>
       </div>
 
       <div class="field">
-        <label>Do you build, deploy, or work hands-on with robots or hardware yourself? <span class="req">*</span></label>
-        <div class="radio-group" id="hardwareGroup">
-          <label class="radio-option">
-            <input type="radio" name="hardwareExperience" value="Yes" required>
-            <span>Yes</span>
-          </label>
-          <label class="radio-option">
-            <input type="radio" name="hardwareExperience" value="No" required>
-            <span>No</span>
-          </label>
-        </div>
-        <div class="conditional" id="hardwareDescWrap" style="display:none;">
-          <textarea id="hardwareDescription" placeholder="Briefly describe what you build, deploy, or work on"></textarea>
+        <label>Where would recordings be stored? <span class="req">*</span></label>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="storage" value="Our own storage"><span>Our own storage</span></label>
+          <label class="choice"><input type="radio" name="storage" value="Humyn's server is fine"><span>Humyn's server is fine</span></label>
+          <label class="choice"><input type="radio" name="storage" value="Either"><span>Either</span></label>
+          <label class="choice"><input type="radio" name="storage" value="Not sure"><span>Not sure</span></label>
         </div>
       </div>
 
       <div class="field">
-        <label for="firstContent">What's the first piece of content you'd create with EgoS1? <span class="req">*</span></label>
-        <div class="hint">Be specific about the format (video, thread, teardown, field test, etc.) and angle</div>
-        <textarea id="firstContent" required placeholder="e.g. A 10-minute YouTube teardown covering..."></textarea>
-      </div>
-
-      <div class="field">
-        <label for="publishTimeline">How soon after receiving the unit could you publish? <span class="req">*</span></label>
-        <input type="text" id="publishTimeline" required placeholder="e.g. Within 1 week">
-      </div>
-
-      <div class="field">
-        <label>Open to a follow-up piece 2-3 weeks later? <span class="req">*</span></label>
-        <div class="radio-group" id="followupGroup">
-          <label class="radio-option">
-            <input type="radio" name="followupOpen" value="Yes" required>
-            <span>Yes</span>
-          </label>
-          <label class="radio-option">
-            <input type="radio" name="followupOpen" value="No" required>
-            <span>No</span>
-          </label>
+        <label>Would you share what you find? <span class="req">*</span></label>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="shareFindings" value="Yes, publicly (post, thread, clip or preprint)"><span>Yes, publicly (post, thread, clip or preprint)</span></label>
+          <label class="choice"><input type="radio" name="shareFindings" value="Yes, with Humyn only"><span>Yes, with Humyn only</span></label>
+          <label class="choice"><input type="radio" name="shareFindings" value="Not sure yet"><span>Not sure yet</span></label>
         </div>
       </div>
 
-      <div class="notice">
-        <strong>This is a content-for-access exchange, not paid.</strong> By submitting, you confirm you understand this and can commit to at least one public piece of content within 3 weeks of receiving the unit.
+      <div class="field">
+        <label>May we name you or your lab if you share?</label>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="nameConsent" value="Yes"><span>Yes</span></label>
+          <label class="choice"><input type="radio" name="nameConsent" value="No"><span>No</span></label>
+          <label class="choice"><input type="radio" name="nameConsent" value="Ask me first"><span>Ask me first</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="workLink">Link to your work <span class="optional">(optional)</span></label>
+        <input type="url" id="workLink" placeholder="e.g. paper, project page, GitHub or profile">
       </div>
 
       <label class="ack">
         <input type="checkbox" id="ack" required>
-        <span>I confirm I understand this is a content-for-access exchange (not paid), and I can commit to publishing at least one public piece of content within 3 weeks of receiving the unit.</span>
+        <span>I confirm the information above is accurate.</span>
       </label>
 
       <p class="error-msg" id="errorMsg">Please fill in all required fields before submitting.</p>
 
-      <button type="submit" id="submitBtn">Submit Application</button>
+      <button type="submit" id="submitBtn">Apply for Early Access</button>
     </form>
   </div>
 
   <div id="successView" class="success" style="display:none;">
     <div class="check">&#10003;</div>
     <h2>Thanks — we've got it</h2>
-    <p>Your application for the Humyn EgoS1 Creator Program has been submitted. We'll follow up if you're selected.</p>
+    <p>Your application for Humyn egoS1 Early Access has been submitted. Early kits are limited, and we'll follow up if you're selected.</p>
   </div>
-  <footer>Humyn Labs &middot; EgoS1 Creator Program</footer>
+  <footer>Humyn Labs &middot; egoS1 Early Access</footer>
 </div>
 </div>
 
@@ -519,17 +611,26 @@ const GAS_URL = "https://script.google.com/macros/s/AKfycbzwHw9RE51t6EtZtQOt7odX
 const form = document.getElementById('creatorForm');
 const errorMsg = document.getElementById('errorMsg');
 const submitBtn = document.getElementById('submitBtn');
-const hardwareDescWrap = document.getElementById('hardwareDescWrap');
-const hardwareDescription = document.getElementById('hardwareDescription');
 
-document.querySelectorAll('input[name="hardwareExperience"]').forEach(function (radio) {
-  radio.addEventListener('change', function () {
-    if (radio.value === 'Yes' && radio.checked) {
-      hardwareDescWrap.style.display = 'block';
-    } else if (radio.checked) {
-      hardwareDescWrap.style.display = 'none';
-      hardwareDescription.value = '';
-    }
+function checkedValues(name) {
+  return Array.from(document.querySelectorAll('input[name="' + name + '"]:checked')).map(function (el) { return el.value; });
+}
+function radioValue(name) {
+  const el = document.querySelector('input[name="' + name + '"]:checked');
+  return el ? el.value : '';
+}
+function toggleOther(show, otherId) {
+  const el = document.getElementById(otherId);
+  el.classList.toggle('show', show);
+  if (!show) el.value = '';
+}
+
+document.getElementById('role').addEventListener('change', function () {
+  toggleOther(this.value === 'Other', 'roleOther');
+});
+document.querySelectorAll('input[name="useCases"]').forEach(function (el) {
+  el.addEventListener('change', function () {
+    toggleOther(checkedValues('useCases').indexOf('Other') !== -1, 'useOther');
   });
 });
 
@@ -537,28 +638,33 @@ form.addEventListener('submit', function (e) {
   e.preventDefault();
 
   const fullName = document.getElementById('fullName').value.trim();
-  const handle = document.getElementById('handle').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const institution = document.getElementById('institution').value.trim();
+  const roleSel = document.getElementById('role').value;
+  const roleOther = document.getElementById('roleOther').value.trim();
+  const role = (roleSel === 'Other' && roleOther) ? 'Other: ' + roleOther : roleSel;
   const location = document.getElementById('location').value.trim();
-  const contentLink1 = document.getElementById('contentLink1').value.trim();
-  const contentLink2 = document.getElementById('contentLink2').value.trim();
-  const contentLink3 = document.getElementById('contentLink3').value.trim();
-  const hardwareRadio = document.querySelector('input[name="hardwareExperience"]:checked');
-  const hardwareExperience = hardwareRadio ? hardwareRadio.value : '';
-  const hardwareDescriptionVal = hardwareDescription.value.trim();
-  const firstContent = document.getElementById('firstContent').value.trim();
-  const publishTimeline = document.getElementById('publishTimeline').value.trim();
-  const followupRadio = document.querySelector('input[name="followupOpen"]:checked');
-  const followupOpen = followupRadio ? followupRadio.value : '';
+  const researchArea = document.getElementById('researchArea').value.trim();
+  const useOther = document.getElementById('useOther').value.trim();
+  const useList = checkedValues('useCases');
+  const useCases = useList.map(function (v) { return (v === 'Other' && useOther) ? 'Other: ' + useOther : v; }).join('; ');
+  const experiment = document.getElementById('experiment').value.trim();
+  const units = radioValue('units');
+  const storage = radioValue('storage');
+  const shareFindings = radioValue('shareFindings');
+  const nameConsent = radioValue('nameConsent');
+  const workLink = document.getElementById('workLink').value.trim();
   const ack = document.getElementById('ack').checked;
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
 
-  const missingCore = !fullName || !handle || !location || !contentLink1 || !contentLink2 || !contentLink3 ||
-    !hardwareExperience || !firstContent || !publishTimeline || !followupOpen || !ack;
-  const missingHardwareDesc = hardwareExperience === 'Yes' && !hardwareDescriptionVal;
-
-  if (missingCore || missingHardwareDesc) {
-    errorMsg.textContent = missingHardwareDesc
-      ? 'Please briefly describe your hands-on experience with robots or hardware.'
-      : 'Please fill in all required fields before submitting.';
+  if (!fullName || !email || !institution || !roleSel || !location || !researchArea || !useList.length ||
+      !experiment || !units || !storage || !shareFindings || !ack) {
+    errorMsg.textContent = 'Please fill in all required fields before submitting.';
+    errorMsg.style.display = 'block';
+    return;
+  }
+  if (!emailOk) {
+    errorMsg.textContent = 'Please enter a valid email address.';
     errorMsg.style.display = 'block';
     return;
   }
@@ -568,10 +674,9 @@ form.addEventListener('submit', function (e) {
   submitBtn.textContent = 'Submitting…';
 
   const payload = {
-    fullName, handle, location,
-    contentLink1, contentLink2, contentLink3,
-    hardwareExperience, hardwareDescription: hardwareDescriptionVal,
-    firstContent, publishTimeline, followupOpen
+    formVersion: 2,
+    fullName, email, institution, role, location, researchArea,
+    useCases, experiment, units, storage, shareFindings, nameConsent, workLink
   };
 
   fetch(GAS_URL, {
@@ -584,7 +689,7 @@ form.addEventListener('submit', function (e) {
     document.getElementById('successView').style.display = 'block';
   }).catch(function () {
     submitBtn.disabled = false;
-    submitBtn.textContent = 'Submit Application';
+    submitBtn.textContent = 'Apply for Early Access';
     errorMsg.textContent = 'Something went wrong submitting the form. Please try again.';
     errorMsg.style.display = 'block';
   });
