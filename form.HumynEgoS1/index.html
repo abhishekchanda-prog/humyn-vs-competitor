@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reserve your Humyn EgoS1 — Humyn Labs</title>
-<meta name="description" content="Reserve your Humyn EgoS1 today. Tell us what you're building and our team will follow up with a formal quotation.">
+<title>Register your interest in Humyn egoS1 — Humyn Labs</title>
+<meta name="description" content="Tell us what you're building. We're opening egoS1 to labs in stages and teams that register their interest hear from us first.">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://abhishekchanda-prog.github.io/humyn-vs-competitor/form.HumynEgoS1/">
-<meta property="og:title" content="Reserve your Humyn EgoS1 today">
-<meta property="og:description" content="Tell us what you're building and our team will follow up with a formal quotation.">
+<meta property="og:title" content="Register your interest in Humyn egoS1">
+<meta property="og:description" content="Tell us what you're building. We're opening egoS1 to labs in stages and teams that register their interest hear from us first.">
 <meta property="og:image" content="https://abhishekchanda-prog.github.io/humyn-vs-competitor/form.HumynEgoS1/og-image-v2.jpg">
 <meta property="og:image:width" content="1920">
 <meta property="og:image:height" content="1080">
 <meta property="og:site_name" content="Humyn Labs">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Reserve your Humyn EgoS1 today">
-<meta name="twitter:description" content="Tell us what you're building and our team will follow up with a formal quotation.">
+<meta name="twitter:title" content="Register your interest in Humyn egoS1">
+<meta name="twitter:description" content="Tell us what you're building. We're opening egoS1 to labs in stages and teams that register their interest hear from us first.">
 <meta name="twitter:image" content="https://abhishekchanda-prog.github.io/humyn-vs-competitor/form.HumynEgoS1/og-image-v2.jpg">
 
 <meta name="linkedin:owner" content="Humyn Labs">
@@ -289,6 +289,40 @@ button[type="submit"]:disabled { opacity: 0.6; cursor: not-allowed; }
 .success h2 { font-family: 'Rethink Sans', sans-serif; font-weight: 800; font-size: 22px; margin: 0 0 10px; }
 .success p { color: var(--ink-soft); font-size: 14.5px; max-width: 42ch; margin: 0 auto; line-height: 1.6; }
 
+.intro + .intro-sub { margin-top: -24px; }
+.intro-sub {
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0 0 36px;
+}
+.intro-sub a { color: var(--accent); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.intro-sub a:hover { filter: brightness(1.1); }
+.hint { text-transform: none; letter-spacing: 0; font-weight: 500; color: var(--ink-soft); }
+.choices { display: flex; flex-wrap: wrap; gap: 8px; }
+.field .choice { position: relative; display: inline-block; margin: 0; text-transform: none; letter-spacing: 0; font-weight: 500; color: var(--ink); font-size: 14px; }
+.choice input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.choice span {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1.3;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 9px 14px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+  user-select: none;
+}
+.choice span:hover { border-color: var(--ink-soft); }
+.choice input:checked + span { background: var(--accent-soft); border-color: var(--accent); color: var(--accent-ink); font-weight: 600; }
+.choice input:focus-visible + span { box-shadow: 0 0 0 3px var(--accent-soft); border-color: var(--accent); }
+.choice input:disabled + span { opacity: 0.45; cursor: not-allowed; }
+.other-input { margin-top: 10px; display: none; }
+.other-input.show { display: block; }
+.optional { text-transform: none; letter-spacing: 0; font-weight: 500; }
+
 footer {
   text-align: center;
   color: var(--ink-soft);
@@ -379,75 +413,129 @@ footer {
 <div class="page">
   <div class="hero-visual">
     <div class="hero-visual-inner">
-      <img src="./hero.png" alt="Humyn EgoS1">
+      <img src="./hero.png" alt="Humyn egoS1">
     </div>
   </div>
   <div class="wrap">
   <div id="formView">
-    <h1>Reserve your Humyn EgoS1 today</h1>
-    <p class="intro">Tell us a bit about what you're building and how many units you're considering. Our team will follow up with a formal quotation.</p>
+    <h1>Register your interest in Humyn egoS1</h1>
+    <p class="intro">Tell us what you're building. We're opening egoS1 to labs in stages and teams that register their interest hear from us first.</p>
+    <p class="intro-sub">Want to try egoS1 now? Apply for research access on <a href="https://abhishekchanda-prog.github.io/humyn-vs-competitor/creators.EgoS1/" target="_blank" rel="noopener">this</a>.</p>
 
     <form id="loiForm" novalidate>
       <div class="row">
         <div class="field">
-          <label for="fullName">Full Name <span class="req">*</span></label>
+          <label for="fullName">Full name <span class="req">*</span></label>
           <input type="text" id="fullName" required autocomplete="name">
         </div>
         <div class="field">
-          <label for="companyName">Company Name <span class="req">*</span></label>
-          <input type="text" id="companyName" required autocomplete="organization">
+          <label for="email">Email <span class="req">*</span></label>
+          <input type="email" id="email" required autocomplete="email">
         </div>
       </div>
       <div class="row">
         <div class="field">
-          <label for="contactNumber">Contact Number <span class="req">*</span></label>
-          <input type="tel" id="contactNumber" required autocomplete="tel">
+          <label for="organization">Organization or lab <span class="req">*</span></label>
+          <input type="text" id="organization" required autocomplete="organization">
         </div>
         <div class="field">
-          <label for="email">Email Address <span class="req">*</span></label>
-          <input type="email" id="email" required autocomplete="email">
+          <label for="role">Your role</label>
+        <select id="role">
+          <option value="" selected>Select your role</option>
+          <option value="Researcher">Researcher</option>
+          <option value="Robotics or model engineer">Robotics or model engineer</option>
+          <option value="Lab lead">Lab lead</option>
+          <option value="Data or ops lead">Data or ops lead</option>
+          <option value="Other">Other</option>
+        </select>
+          <input type="text" id="roleOther" class="other-input" placeholder="Your role">
         </div>
       </div>
       <div class="field">
-        <label for="useCase">What are you building? <span class="req">*</span></label>
-        <textarea id="useCase" required placeholder="Briefly describe your use case for Humyn EgoS1"></textarea>
+        <label for="building">What are you building or researching? <span class="req">*</span></label>
+        <textarea id="building" required></textarea>
       </div>
       <div class="field">
-        <label for="favFeature">Which feature are you most excited about? <span class="req">*</span></label>
-        <select id="favFeature" required>
-          <option value="" disabled selected>Select a feature</option>
-          <option value="Form factor (cap)">Form factor (cap)</option>
-          <option value="1-microsecond IMU sync">1-microsecond IMU sync</option>
-          <option value="150° Diagonal FOV">150° Diagonal FOV</option>
-          <option value="Weight (127 grams)">Weight (127 grams)</option>
+        <label>How would you use egoS1? <span class="hint">(select all that apply)</span></label>
+        <div class="choices" id="useCases">
+          <label class="choice"><input type="checkbox" name="useCases" value="Training data"><span>Training data</span></label>
+          <label class="choice"><input type="checkbox" name="useCases" value="Dataset collection"><span>Dataset collection</span></label>
+          <label class="choice"><input type="checkbox" name="useCases" value="Benchmarking capture hardware"><span>Benchmarking capture hardware</span></label>
+          <label class="choice"><input type="checkbox" name="useCases" value="Other"><span>Other</span></label>
+        </div>
+        <input type="text" id="useOther" class="other-input" placeholder="How else would you use it?">
+      </div>
+      <div class="field">
+        <label>What matters most to you in a capture device? <span class="hint">(choose up to 2)</span></label>
+        <div class="choices" id="priorities">
+          <label class="choice"><input type="checkbox" name="priorities" value="Camera-IMU sync"><span>Camera-IMU sync</span></label>
+          <label class="choice"><input type="checkbox" name="priorities" value="Field of view"><span>Field of view</span></label>
+          <label class="choice"><input type="checkbox" name="priorities" value="Calibration and documentation"><span>Calibration and documentation</span></label>
+          <label class="choice"><input type="checkbox" name="priorities" value="Raw data and open formats"><span>Raw data and open formats</span></label>
+          <label class="choice"><input type="checkbox" name="priorities" value="Wireless upload to a server"><span>Wireless upload to a server</span></label>
+          <label class="choice"><input type="checkbox" name="priorities" value="Wearability and form factor"><span>Wearability and form factor</span></label>
+          <label class="choice"><input type="checkbox" name="priorities" value="Other"><span>Other</span></label>
+        </div>
+        <input type="text" id="priorityOther" class="other-input" placeholder="What else matters to you?">
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="units">How many units could your team use? <span class="req">*</span></label>
+        <select id="units" required>
+          <option value="" disabled selected>Select</option>
+          <option value="1 to 5">1 to 5</option>
+          <option value="6 to 20">6 to 20</option>
+          <option value="21 to 100">21 to 100</option>
+          <option value="More than 100">More than 100</option>
+          <option value="Not sure">Not sure</option>
+        </select>
+        </div>
+        <div class="field">
+          <label for="timing">When would you want them? <span class="req">*</span></label>
+        <select id="timing" required>
+          <option value="" disabled selected>Select</option>
+          <option value="Within 3 months">Within 3 months</option>
+          <option value="3 to 6 months">3 to 6 months</option>
+          <option value="6 to 12 months">6 to 12 months</option>
+          <option value="Just exploring">Just exploring</option>
+        </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="recordingExport">How would you want recordings to leave the device?</label>
+        <select id="recordingExport">
+          <option value="" selected>Select an option</option>
+          <option value="Wireless upload to our own storage">Wireless upload to our own storage</option>
+          <option value="Wireless upload to Humyn's server">Wireless upload to Humyn's server</option>
+          <option value="Wired or local export only">Wired or local export only</option>
         </select>
       </div>
       <div class="field">
-        <label for="orderSize">Potential Order Size (number of units) <span class="req">*</span></label>
-        <input type="text" id="orderSize" required placeholder="e.g. 10-25 units">
+        <label for="contactNumber">Contact number <span class="optional">(optional)</span></label>
+        <input type="tel" id="contactNumber" autocomplete="tel">
       </div>
 
       <div class="notice">
-        <strong>Non-binding statement.</strong> This form is a non-binding expression of interest only and does not constitute a purchase order or contract. Pricing, delivery, and all commercial terms remain subject to a definitive purchase agreement negotiated separately with Humyn Labs.
+        <strong>Non-binding statement.</strong> This form is a non-binding expression of interest only and does not constitute a purchase order or contract.
       </div>
 
       <label class="ack">
         <input type="checkbox" id="ack" required>
-        <span>I confirm the information above is accurate and I'm authorized to submit this on behalf of my company.</span>
+        <span>I confirm the information above is accurate.</span>
       </label>
 
       <p class="error-msg" id="errorMsg">Please fill in all required fields before submitting.</p>
 
-      <button type="submit" id="submitBtn">Submit Letter of Intent</button>
+      <button type="submit" id="submitBtn">Submit</button>
     </form>
   </div>
 
   <div id="successView" class="success" style="display:none;">
     <div class="check">&#10003;</div>
-    <h2>Thanks — we've got it</h2>
-    <p>Your Letter of Intent for Humyn EgoS1 has been submitted. A member of the Humyn Labs team will follow up shortly with a formal quotation.</p>
+    <h2>Thanks — you're on the list</h2>
+    <p>Your interest in Humyn egoS1 is registered. We're opening egoS1 to labs in stages, and we'll be in touch as access opens.</p>
   </div>
-  <footer>Humyn Labs &middot; EgoS1 Letter of Intent</footer>
+  <footer>Humyn Labs &middot; egoS1 Register your interest</footer>
   </div>
 </div>
 
@@ -457,20 +545,65 @@ const GAS_URL = "https://script.google.com/a/macros/kgen.io/s/AKfycbxGY46Z4SGdOK
 const form = document.getElementById('loiForm');
 const errorMsg = document.getElementById('errorMsg');
 const submitBtn = document.getElementById('submitBtn');
+const MAX_PRIORITIES = 2;
+
+function checkedValues(name) {
+  return Array.from(document.querySelectorAll('input[name="' + name + '"]:checked')).map(function (el) { return el.value; });
+}
+function withOther(values, otherId) {
+  const other = document.getElementById(otherId).value.trim();
+  return values.map(function (v) { return (v === 'Other' && other) ? 'Other: ' + other : v; });
+}
+function toggleOther(show, otherId) {
+  const el = document.getElementById(otherId);
+  el.classList.toggle('show', show);
+  if (!show) el.value = '';
+}
+
+document.getElementById('role').addEventListener('change', function () {
+  toggleOther(this.value === 'Other', 'roleOther');
+});
+document.querySelectorAll('input[name="useCases"]').forEach(function (el) {
+  el.addEventListener('change', function () {
+    toggleOther(checkedValues('useCases').indexOf('Other') !== -1, 'useOther');
+  });
+});
+document.querySelectorAll('input[name="priorities"]').forEach(function (el) {
+  el.addEventListener('change', function () {
+    const picked = checkedValues('priorities');
+    document.querySelectorAll('input[name="priorities"]').forEach(function (box) {
+      box.disabled = !box.checked && picked.length >= MAX_PRIORITIES;
+    });
+    toggleOther(picked.indexOf('Other') !== -1, 'priorityOther');
+  });
+});
 
 form.addEventListener('submit', function (e) {
   e.preventDefault();
 
   const fullName = document.getElementById('fullName').value.trim();
-  const companyName = document.getElementById('companyName').value.trim();
-  const contactNumber = document.getElementById('contactNumber').value.trim();
   const email = document.getElementById('email').value.trim();
-  const useCase = document.getElementById('useCase').value.trim();
-  const favFeature = document.getElementById('favFeature').value;
-  const orderSize = document.getElementById('orderSize').value.trim();
+  const organization = document.getElementById('organization').value.trim();
+  const roleSel = document.getElementById('role').value;
+  const roleOther = document.getElementById('roleOther').value.trim();
+  const role = (roleSel === 'Other' && roleOther) ? 'Other: ' + roleOther : roleSel;
+  const building = document.getElementById('building').value.trim();
+  const useCases = withOther(checkedValues('useCases'), 'useOther').join('; ');
+  const priorities = withOther(checkedValues('priorities'), 'priorityOther').join('; ');
+  const units = document.getElementById('units').value;
+  const timing = document.getElementById('timing').value;
+  const recordingExport = document.getElementById('recordingExport').value;
+  const contactNumber = document.getElementById('contactNumber').value.trim();
   const ack = document.getElementById('ack').checked;
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
 
-  if (!fullName || !companyName || !contactNumber || !email || !useCase || !favFeature || !orderSize || !ack) {
+  if (!fullName || !email || !organization || !building || !units || !timing || !ack) {
+    errorMsg.textContent = 'Please fill in all required fields before submitting.';
+    errorMsg.style.display = 'block';
+    return;
+  }
+  if (!emailOk) {
+    errorMsg.textContent = 'Please enter a valid email address.';
     errorMsg.style.display = 'block';
     return;
   }
@@ -479,7 +612,11 @@ form.addEventListener('submit', function (e) {
   submitBtn.disabled = true;
   submitBtn.textContent = 'Submitting…';
 
-  const payload = { fullName, companyName, contactNumber, email, useCase, favFeature, orderSize };
+  const payload = {
+    formVersion: 2,
+    fullName, email, organization, role, building,
+    useCases, priorities, units, timing, recordingExport, contactNumber
+  };
 
   fetch(GAS_URL, {
     method: 'POST',
@@ -491,7 +628,7 @@ form.addEventListener('submit', function (e) {
     document.getElementById('successView').style.display = 'block';
   }).catch(function () {
     submitBtn.disabled = false;
-    submitBtn.textContent = 'Submit Letter of Intent';
+    submitBtn.textContent = 'Submit';
     errorMsg.textContent = 'Something went wrong submitting the form. Please try again.';
     errorMsg.style.display = 'block';
   });
