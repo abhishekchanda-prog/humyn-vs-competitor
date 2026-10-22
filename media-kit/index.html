@@ -99,7 +99,7 @@
     padding-top: 18px; border-top: 1px solid var(--cream);
   }
   .meta { font-size: 13px; letter-spacing: .04em; color: var(--muted); }
-  .cta, .contact-link { display: inline-flex; align-items: center; gap: 12px; font-weight: 500; color: var(--charcoal); }
+  .cta { display: inline-flex; align-items: center; gap: 12px; font-weight: 500; color: var(--charcoal); }
   .cta { font-size: 18px; }
   .icon {
     display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px;
@@ -108,15 +108,7 @@
   .icon svg { width: 16px; height: 16px; }
   .card:hover .icon { transform: translateY(2px); }
 
-  /* Press contact */
-  .contact {
-    margin-top: clamp(56px, 7vw, 96px); padding: clamp(32px, 4vw, 48px) 0 clamp(64px, 8vw, 120px);
-    border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; align-items: center;
-    justify-content: space-between; gap: 20px;
-  }
-  .contact p { font-size: clamp(18px, 1.8vw, 22px); color: var(--muted); margin: 0; }
-  .contact-link { font-size: clamp(24px, 2.6vw, 36px); letter-spacing: -.02em; text-decoration: none; }
-  .contact-link:hover .icon { transform: translateX(3px); }
+  main.wrap { padding-bottom: clamp(64px, 8vw, 120px); }
 
   @media (max-width: 960px) { .grid { grid-template-columns: 1fr; max-width: 560px; } }
   @media (prefers-reduced-motion: reduce) {
@@ -195,10 +187,6 @@
 
   </section>
 
-  <section class="contact">
-    <p>Need an interview, a quote or a format that isn&rsquo;t here?</p>
-    <a class="contact-link" href="https://humynlabs.ai/contact-us">Press contact <span class="icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3.5 10.5 8 6 12.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-  </section>
 </main>
 
 <script>
