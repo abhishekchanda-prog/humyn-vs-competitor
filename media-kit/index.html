@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Media Kit | Humyn Labs</title>
+<meta name="description" content="Official Humyn Labs logos, typefaces and brand book for press, partners and anyone writing about us.">
+<meta property="og:title" content="Humyn Labs Media Kit">
+<meta property="og:description" content="Logos, typefaces and the brand book: everything you need to feature Humyn Labs.">
+<meta property="og:image" content="https://humynlabs.ai/assets/webp/ogImage.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600&family=Zilla+Slab:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f4f2;
+    --cream: #e5e3df;
+    --charcoal: #383532;
+    --orange: #ff6e42;
+    --muted: #6f6b66;
+    --line: #cfcecc;
+    --sans: "Rethink Sans", system-ui, -apple-system, sans-serif;
+    --serif: "Zilla Slab", Georgia, serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--charcoal);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1440px; margin: 0 auto; padding: 0 clamp(16px, 9vw, 132px); }
+
+  /* Header */
+  .top {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 28px; padding-bottom: 28px;
+  }
+  .top .logo { display: block; width: 148px; color: var(--charcoal); }
+  .top .logo svg { display: block; width: 100%; height: auto; }
+  .back { font-size: 15px; text-decoration: none; color: var(--muted); }
+  .back:hover { color: var(--charcoal); }
+
+  /* Hero */
+  .hero { max-width: 980px; padding: clamp(56px, 9vw, 120px) 0 clamp(48px, 7vw, 88px); }
+  .eyebrow {
+    font-size: 13px; font-weight: 600; letter-spacing: .42em; text-transform: uppercase;
+    color: var(--orange); margin: 0 0 24px;
+  }
+  h1 {
+    font-size: clamp(36px, 5.6vw, 72px); line-height: 1.04; letter-spacing: -.025em;
+    font-weight: 500; margin: 0; text-wrap: balance;
+  }
+  .paren { font-family: var(--serif); font-weight: 300; letter-spacing: -.01em; color: var(--muted); }
+  .lede { font-size: clamp(17px, 1.6vw, 20px); line-height: 1.55; color: var(--muted); max-width: 560px; margin: 28px 0 0; }
+
+  /* Cards */
+  .grid {
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2vw, 28px);
+    border-top: 1px solid var(--line); padding-top: clamp(32px, 4vw, 48px);
+  }
+  .card {
+    display: flex; flex-direction: column; background: #fff; border: 1px solid transparent;
+    border-radius: 20px; overflow: hidden; text-decoration: none;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -24px rgba(56,53,50,.45); border-color: var(--line); }
+  .card:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+  .card[aria-disabled="true"] { cursor: not-allowed; }
+  .card[aria-disabled="true"] .cta { color: var(--muted); }
+  .card[aria-disabled="true"] .icon { background: var(--line); }
+
+  .preview { position: relative; aspect-ratio: 4 / 3; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .p-fonts { background: var(--cream); gap: .12em; font-size: clamp(72px, 8vw, 116px); line-height: 1; }
+  .spec-sans { font-weight: 500; letter-spacing: -.04em; }
+  .spec-serif { font-family: var(--serif); font-weight: 300; color: var(--orange); }
+  .tag {
+    position: absolute; left: 20px; bottom: 16px; font-size: 11px; font-weight: 600;
+    letter-spacing: .32em; text-transform: uppercase;
+  }
+  .p-fonts .tag { color: var(--muted); }
+  .p-logos { background: var(--charcoal); color: #fff; }
+  .p-logos svg { width: 72%; height: auto; }
+  .swatches { position: absolute; right: 18px; bottom: 16px; display: flex; gap: 6px; }
+  .swatches span { width: 14px; height: 14px; border-radius: 50%; box-shadow: 0 0 0 1px rgba(255,255,255,.25); }
+  .p-book { background: var(--orange); color: var(--bg); }
+  .p-book svg { width: 64%; height: auto; }
+  .p-book .tag { color: var(--bg); }
+
+  .body { display: flex; flex-direction: column; flex: 1; padding: 24px 24px 22px; }
+  .index { font-size: 13px; font-weight: 500; color: var(--orange); margin-bottom: 10px; }
+  h2 { font-size: clamp(24px, 2.2vw, 30px); font-weight: 500; letter-spacing: -.02em; margin: 0 0 10px; }
+  .text { font-size: 15px; line-height: 1.55; color: var(--muted); margin: 0 0 24px; }
+  .foot {
+    margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    padding-top: 18px; border-top: 1px solid var(--cream);
+  }
+  .meta { font-size: 13px; letter-spacing: .04em; color: var(--muted); }
+  .cta, .contact-link { display: inline-flex; align-items: center; gap: 12px; font-weight: 500; color: var(--charcoal); }
+  .cta { font-size: 18px; }
+  .icon {
+    display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px;
+    border-radius: 50%; background: var(--orange); color: #fff; flex-shrink: 0; transition: transform .25s ease;
+  }
+  .icon svg { width: 16px; height: 16px; }
+  .card:hover .icon { transform: translateY(2px); }
+
+  /* Press contact */
+  .contact {
+    margin-top: clamp(56px, 7vw, 96px); padding: clamp(32px, 4vw, 48px) 0 clamp(64px, 8vw, 120px);
+    border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; align-items: center;
+    justify-content: space-between; gap: 20px;
+  }
+  .contact p { font-size: clamp(18px, 1.8vw, 22px); color: var(--muted); margin: 0; }
+  .contact-link { font-size: clamp(24px, 2.6vw, 36px); letter-spacing: -.02em; text-decoration: none; }
+  .contact-link:hover .icon { transform: translateX(3px); }
+
+  @media (max-width: 960px) { .grid { grid-template-columns: 1fr; max-width: 560px; } }
+  @media (prefers-reduced-motion: reduce) {
+    .card, .icon { transition: none; }
+    .card:hover { transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap top">
+  <a class="logo" href="https://humynlabs.ai" aria-label="Humyn Labs home">
+    <svg viewBox="36.22 404.22 1007.56 271.56" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M677.47,492.4c-8.64-9.6-20.23-14.4-34.76-14.4-7.88,0-15.22,1.68-22.02,5.05-4.89,2.42-9.29,5.53-13.19,9.32-1.63,1.58-4.35.41-4.36-1.85-.03-5.33-3.52-9.65-8.84-9.65h-1.8s-1.86,0-1.86,0h-23.42c-5.51,0-9.18,2.52-11.01,7.57l-22.77,54.99c-3.84,9.27-16.96,9.29-20.83.03l-22.94-55.02c-1.84-5.05-5.51-7.57-11.01-7.57h-4.45l-27.02-.25h-.19c-1.47-.02-2.91-.29-4.32-.7-4.29-1.26-9.04-1.92-14.31-1.92-8.03,0-15.62,2.07-22.77,6.19-7.15,4.13-13.33,9.56-18.53,16.29-3.37-7.19-8.16-12.73-14.39-16.63-6.23-3.9-13.94-5.85-23.12-5.85-7.27,0-13.86,1.7-19.79,5.1-5.93,3.4-11.15,7.74-15.66,13.02v-3.48c0-6.51-5.27-11.78-11.78-11.78h-.72c-7.8,0-15.48.09-23.26-.24-4.18-.18-8.8.5-11.61,3.61-4.11,4.54-2.4,13.82-2.4,19.67v40.95c0,11.47-5.92,22.12-15.66,28.18h0c-6.23,3.86-12.87,5.79-19.9,5.79-9.03,0-16.21-2.93-21.57-8.78-5.35-5.85-8.03-13.67-8.03-23.46v-56.09c0-6.42-3.25-9.64-9.75-9.64h-2.75c-5.32,0-9.64,4.31-9.64,9.64v56.55c0,9.35,1.44,17.59,4.31,24.72,1.18,2.93-.37,6.16-3.49,6.69-3,.51-5.6-1.79-5.6-4.69v-42.55c0-16.29-4.32-29.23-12.96-38.83-8.64-9.6-20.27-14.4-34.87-14.4-7.88,0-15.2,1.68-21.97,5.05-6.77,3.37-12.6,8.07-17.49,14.11v-56.55c0-5.32-4.31-9.64-9.64-9.64h-3.33c-6.12,0-9.18,3.21-9.18,9.64v147.06c0,6.42,3.06,9.64,9.18,9.64h3.33c5.32,0,9.64-4.31,9.64-9.64v-54.35c0-11.5,5.94-22.18,15.72-28.24h0c6.19-3.82,12.85-5.74,19.96-5.74,8.95,0,16.1,2.93,21.45,8.78,5.35,5.85,8.03,13.67,8.03,23.46v56.09c0,6.42,3.25,9.64,9.75,9.64h38.29c.44,0,.87-.03,1.31-.07,3.22-.33,6.47-.31,9.56.66,4.82,1.51,10.1,2.28,15.84,2.28,7.88,0,15.2-1.68,21.97-5.05,4.88-2.43,9.28-5.53,13.18-9.31,1.63-1.57,4.35-.37,4.31,1.91-.1,5.28,5.03,9.58,10.31,9.58h2.19c5.32,0,9.64-4.31,9.64-9.64v-85.23c0-1.55,1.25-2.8,2.8-2.8s2.8,1.25,2.8,2.8v85.23c0,6.42,3.17,9.64,9.52,9.64h2.87c5.32,0,9.64-4.31,9.64-9.64v-58.37c0-10.08,5.06-19.48,13.48-25.03,5.01-3.29,10.65-4.93,16.92-4.93,8.64,0,15.2,2.83,19.67,8.49,4.48,5.66,6.71,13.58,6.71,23.75v56.09c0,6.42,3.25,9.64,9.75,9.64h2.64c5.32,0,9.64-4.31,9.64-9.64v-56.21c0-.62,0-1.24-.02-1.85-.18-10.08,4.83-19.54,13.23-25.12l.15-.1c5.09-3.36,10.76-5.05,17.03-5.05,8.64,0,15.2,2.83,19.67,8.49,4.47,5.66,6.71,13.58,6.71,23.75v56.09c0,6.42,3.25,9.64,9.75,9.64h2.64c6.5,0,9.75-3.21,9.75-9.64v-56.21c0-12.64-2.14-23.23-6.39-31.83h2.01c1.68,0,3.2.99,3.89,2.52l31.93,71.18c4.85,10.82,4.95,23.17.27,34.07-2.6,6.12-5.85,10.97-9.75,14.57-3.9,3.59-8.3,5.39-13.19,5.39-2.22,0-4.3-.33-6.25-.97-1.95-.65-3.84-1.36-5.68-2.12-2.37-.84-4.55-.71-6.54.4-1.99,1.11-3.44,3.08-4.36,5.91l-.69,2.18c-.76,2.37-.8,4.68-.11,6.94.69,2.25,2.68,4.15,5.96,5.68,2.07.99,4.76,1.85,8.09,2.58,3.33.73,6.86,1.09,10.61,1.09,9.1,0,17.32-3.1,24.66-9.29,7.34-6.19,13.38-14.57,18.12-25.12l50.38-113.04c.53-1.19,1.71-1.95,3.01-1.95,1.82,0,3.3,1.48,3.3,3.3v84.74c0,6.42,3.17,9.64,9.52,9.64h2.87c5.32,0,9.64-4.31,9.64-9.64v-54.35c0-11.5,5.94-22.18,15.72-28.24,6.19-3.82,12.85-5.74,19.96-5.74,9.02,0,16.21,2.93,21.57,8.78,5.35,5.85,8.03,13.67,8.03,23.46v56.09c0,6.42,3.25,9.64,9.75,9.64h2.64c5.32,0,9.64-4.31,9.64-9.64v-56.44c0-16.29-4.32-29.23-12.96-38.83Z"/><path d="M795.61,574.33c1.29,0,1.78.32,1.78,1.29s-.48,1.29-1.78,1.29c-4.2,0-11.46-.81-16.79-.81h-4.36c-5.81,0-12.11.81-18.24.81-1.45,0-1.94-.32-1.94-1.29s.49-1.29,1.78-1.29c10.49,0,15.98-2.1,15.98-14.53v-97.81c0-10.65-2.58-10.81-5.16-10.81-4.04,0-9.2.97-10.82,1.13-1.29.16-1.78,0-1.78-.97,0-.65.49-1.13,1.94-1.45,7.75-1.61,20.82-7.75,23.57-7.75h.16c1.29,0,2.1,1.13,2.1,2.74,0,16.62-.97,33.57-.97,58.43v56.49c0,12.43,6.46,14.53,14.53,14.53Z"/><path d="M796.26,559.97c0-16.14,16.95-26.31,33.41-34.54,3.39-1.61,6.13-5.81,6.13-9.52v-1.78c0-17.27-6.62-22.92-14.85-22.92-7.26,0-11.14,4.03-11.14,10.33,0,5.33,2.42,8.07,2.42,12.75,0,3.71-2.1,6.13-5.65,6.13-4.36,0-7.1-5-7.1-10.17,0-12.75,10.65-21.95,24.21-21.95,12.1,0,21.79,6.94,21.79,24.37,0,16.46-.8,33.09-.8,49.55,0,7.59,2.26,9.52,5.16,9.52,2.58,0,6.94-3.23,10.65-16.14.16-1.13.49-1.45,1.13-1.45s.97.49.64,1.78c-4.03,15.33-7.75,22.76-16.46,22.76-6.94,0-13.4-5.16-10.49-17.11.64-2.58-1.61-2.58-2.91-.32-7.1,13.4-10.65,17.43-19.69,17.43-10.49,0-16.46-8.39-16.46-18.72ZM816.76,570.3c10.33,0,19.04-12.43,19.04-30.18v-8.55c0-3.87-2.74-5.49-6.13-3.87-14.53,7.26-24.05,16.14-24.05,28.57,0,7.42,3.23,14.04,11.14,14.04Z"/><path d="M862.91,570.78c1.29-4.68,1.94-10.01,1.94-16.63v-92.16c0-10.65-2.58-10.81-5.16-10.81-4.04,0-9.36.97-10.97,1.13-1.13.16-1.61,0-1.61-.97,0-.65.48-1.13,1.94-1.45,7.58-1.61,20.5-7.59,23.56-7.75,1.45,0,2.26,1.13,2.26,2.74,0,14.04-.97,28.25-.97,42.13v17.75c0,2.26,1.93,2.42,3.07.48,5.16-8.72,11.62-16.79,19.69-16.79,13.24,0,22.11,15.82,22.11,41.96,0,29.05-9.52,48.26-32.93,48.26-7.59,0-24.05-3.39-22.92-7.91ZM872.6,442.15h-.16.16ZM889.71,575.3c12.59,0,19.53-12.11,19.53-41.32,0-24.21-7.1-37.28-17.43-37.28-8.88,0-17.92,10.81-17.92,28.73v29.54c0,14.36,6.78,20.34,15.82,20.34Z"/><path d="M935.22,577.08c-2.58,0-4.84.81-6.29.81-.64,0-1.29-.32-1.29-1.78.16-16.95-3.87-29.21-4.36-32.44-.32-1.29,0-1.94.97-1.94.81,0,1.13.48,1.45,1.78,5,17.43,6.94,32.28,26.79,32.28,8.23,0,12.11-5.49,12.11-12.59,0-10.49-4.84-16.46-19.37-29.21-13.07-11.3-17.27-17.11-17.27-25.82,0-11.46,8.23-19.69,19.37-19.69,5.97,0,8.88,1.45,13.72,1.45,2.91,0,5.33-.81,6.78-.81.64,0,1.29.32,1.29,1.61-.16,18.24,1.61,23.57,1.61,28.73,0,1.45-.48,1.94-1.13,1.94s-.97-.48-1.13-1.94c-2.91-20.5-8.72-28.25-21.63-28.25-6.78,0-11.3,5.81-11.3,13.24,0,8.39,5.65,13.4,16.14,22.11,14.37,12.27,20.34,19.37,20.34,30.5,0,14.37-9.04,21.63-19.85,21.63-8.55,0-12.1-1.61-16.95-1.61Z"/><path d="M759.73,618.82c-27.67-21.3-44.11-54.68-44.11-93.92s14.59-74.81,41.26-93.92v3.52c-20.29,19.96-30.36,53.34-30.36,90.4,0,34.72,11.57,68.77,33.21,90.4v3.52Z"/><path d="M973.05,615.29c21.64-21.63,33.21-55.68,33.21-90.4,0-37.07-10.06-70.44-30.36-90.4v-3.52c26.84,19.12,41.26,54,41.26,93.92s-16.27,72.62-44.11,93.92v-3.52Z"/></svg>
+  </a>
+  <a class="back" href="https://humynlabs.ai/about">&larr; Back to About</a>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="eyebrow">Media kit</p>
+    <h1>Everything you need to write about us <span class="paren">(and get it right)</span>.</h1>
+    <p class="lede">Official Humyn Labs logos, typefaces and brand book. Pick a file and the download starts straight away.</p>
+  </section>
+
+  <section class="grid" aria-label="Media kit downloads">
+
+    <a class="card" data-asset="fonts" href="#">
+      <div class="preview p-fonts">
+        <span class="spec-sans">Aa</span><span class="spec-serif">Aa</span>
+        <span class="tag">Rethink Sans / Zilla Slab</span>
+      </div>
+      <div class="body">
+        <span class="index">01</span>
+        <h2>Fonts</h2>
+        <p class="text">Rethink Sans, our primary typeface, and Zilla Slab, our editorial serif. Desktop font files, free to use under the SIL Open Font Licence.</p>
+        <div class="foot">
+          <span class="meta" data-meta>ZIP</span>
+          <span class="cta">Download <span class="icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M8 3v9M4 8l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+        </div>
+      </div>
+    </a>
+
+    <a class="card" data-asset="logos" href="#">
+      <div class="preview p-logos">
+        <svg viewBox="36.22 404.22 1007.56 271.56" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M677.47,492.4c-8.64-9.6-20.23-14.4-34.76-14.4-7.88,0-15.22,1.68-22.02,5.05-4.89,2.42-9.29,5.53-13.19,9.32-1.63,1.58-4.35.41-4.36-1.85-.03-5.33-3.52-9.65-8.84-9.65h-1.8s-1.86,0-1.86,0h-23.42c-5.51,0-9.18,2.52-11.01,7.57l-22.77,54.99c-3.84,9.27-16.96,9.29-20.83.03l-22.94-55.02c-1.84-5.05-5.51-7.57-11.01-7.57h-4.45l-27.02-.25h-.19c-1.47-.02-2.91-.29-4.32-.7-4.29-1.26-9.04-1.92-14.31-1.92-8.03,0-15.62,2.07-22.77,6.19-7.15,4.13-13.33,9.56-18.53,16.29-3.37-7.19-8.16-12.73-14.39-16.63-6.23-3.9-13.94-5.85-23.12-5.85-7.27,0-13.86,1.7-19.79,5.1-5.93,3.4-11.15,7.74-15.66,13.02v-3.48c0-6.51-5.27-11.78-11.78-11.78h-.72c-7.8,0-15.48.09-23.26-.24-4.18-.18-8.8.5-11.61,3.61-4.11,4.54-2.4,13.82-2.4,19.67v40.95c0,11.47-5.92,22.12-15.66,28.18h0c-6.23,3.86-12.87,5.79-19.9,5.79-9.03,0-16.21-2.93-21.57-8.78-5.35-5.85-8.03-13.67-8.03-23.46v-56.09c0-6.42-3.25-9.64-9.75-9.64h-2.75c-5.32,0-9.64,4.31-9.64,9.64v56.55c0,9.35,1.44,17.59,4.31,24.72,1.18,2.93-.37,6.16-3.49,6.69-3,.51-5.6-1.79-5.6-4.69v-42.55c0-16.29-4.32-29.23-12.96-38.83-8.64-9.6-20.27-14.4-34.87-14.4-7.88,0-15.2,1.68-21.97,5.05-6.77,3.37-12.6,8.07-17.49,14.11v-56.55c0-5.32-4.31-9.64-9.64-9.64h-3.33c-6.12,0-9.18,3.21-9.18,9.64v147.06c0,6.42,3.06,9.64,9.18,9.64h3.33c5.32,0,9.64-4.31,9.64-9.64v-54.35c0-11.5,5.94-22.18,15.72-28.24h0c6.19-3.82,12.85-5.74,19.96-5.74,8.95,0,16.1,2.93,21.45,8.78,5.35,5.85,8.03,13.67,8.03,23.46v56.09c0,6.42,3.25,9.64,9.75,9.64h38.29c.44,0,.87-.03,1.31-.07,3.22-.33,6.47-.31,9.56.66,4.82,1.51,10.1,2.28,15.84,2.28,7.88,0,15.2-1.68,21.97-5.05,4.88-2.43,9.28-5.53,13.18-9.31,1.63-1.57,4.35-.37,4.31,1.91-.1,5.28,5.03,9.58,10.31,9.58h2.19c5.32,0,9.64-4.31,9.64-9.64v-85.23c0-1.55,1.25-2.8,2.8-2.8s2.8,1.25,2.8,2.8v85.23c0,6.42,3.17,9.64,9.52,9.64h2.87c5.32,0,9.64-4.31,9.64-9.64v-58.37c0-10.08,5.06-19.48,13.48-25.03,5.01-3.29,10.65-4.93,16.92-4.93,8.64,0,15.2,2.83,19.67,8.49,4.48,5.66,6.71,13.58,6.71,23.75v56.09c0,6.42,3.25,9.64,9.75,9.64h2.64c5.32,0,9.64-4.31,9.64-9.64v-56.21c0-.62,0-1.24-.02-1.85-.18-10.08,4.83-19.54,13.23-25.12l.15-.1c5.09-3.36,10.76-5.05,17.03-5.05,8.64,0,15.2,2.83,19.67,8.49,4.47,5.66,6.71,13.58,6.71,23.75v56.09c0,6.42,3.25,9.64,9.75,9.64h2.64c6.5,0,9.75-3.21,9.75-9.64v-56.21c0-12.64-2.14-23.23-6.39-31.83h2.01c1.68,0,3.2.99,3.89,2.52l31.93,71.18c4.85,10.82,4.95,23.17.27,34.07-2.6,6.12-5.85,10.97-9.75,14.57-3.9,3.59-8.3,5.39-13.19,5.39-2.22,0-4.3-.33-6.25-.97-1.95-.65-3.84-1.36-5.68-2.12-2.37-.84-4.55-.71-6.54.4-1.99,1.11-3.44,3.08-4.36,5.91l-.69,2.18c-.76,2.37-.8,4.68-.11,6.94.69,2.25,2.68,4.15,5.96,5.68,2.07.99,4.76,1.85,8.09,2.58,3.33.73,6.86,1.09,10.61,1.09,9.1,0,17.32-3.1,24.66-9.29,7.34-6.19,13.38-14.57,18.12-25.12l50.38-113.04c.53-1.19,1.71-1.95,3.01-1.95,1.82,0,3.3,1.48,3.3,3.3v84.74c0,6.42,3.17,9.64,9.52,9.64h2.87c5.32,0,9.64-4.31,9.64-9.64v-54.35c0-11.5,5.94-22.18,15.72-28.24,6.19-3.82,12.85-5.74,19.96-5.74,9.02,0,16.21,2.93,21.57,8.78,5.35,5.85,8.03,13.67,8.03,23.46v56.09c0,6.42,3.25,9.64,9.75,9.64h2.64c5.32,0,9.64-4.31,9.64-9.64v-56.44c0-16.29-4.32-29.23-12.96-38.83Z"/><path d="M795.61,574.33c1.29,0,1.78.32,1.78,1.29s-.48,1.29-1.78,1.29c-4.2,0-11.46-.81-16.79-.81h-4.36c-5.81,0-12.11.81-18.24.81-1.45,0-1.94-.32-1.94-1.29s.49-1.29,1.78-1.29c10.49,0,15.98-2.1,15.98-14.53v-97.81c0-10.65-2.58-10.81-5.16-10.81-4.04,0-9.2.97-10.82,1.13-1.29.16-1.78,0-1.78-.97,0-.65.49-1.13,1.94-1.45,7.75-1.61,20.82-7.75,23.57-7.75h.16c1.29,0,2.1,1.13,2.1,2.74,0,16.62-.97,33.57-.97,58.43v56.49c0,12.43,6.46,14.53,14.53,14.53Z"/><path d="M796.26,559.97c0-16.14,16.95-26.31,33.41-34.54,3.39-1.61,6.13-5.81,6.13-9.52v-1.78c0-17.27-6.62-22.92-14.85-22.92-7.26,0-11.14,4.03-11.14,10.33,0,5.33,2.42,8.07,2.42,12.75,0,3.71-2.1,6.13-5.65,6.13-4.36,0-7.1-5-7.1-10.17,0-12.75,10.65-21.95,24.21-21.95,12.1,0,21.79,6.94,21.79,24.37,0,16.46-.8,33.09-.8,49.55,0,7.59,2.26,9.52,5.16,9.52,2.58,0,6.94-3.23,10.65-16.14.16-1.13.49-1.45,1.13-1.45s.97.49.64,1.78c-4.03,15.33-7.75,22.76-16.46,22.76-6.94,0-13.4-5.16-10.49-17.11.64-2.58-1.61-2.58-2.91-.32-7.1,13.4-10.65,17.43-19.69,17.43-10.49,0-16.46-8.39-16.46-18.72ZM816.76,570.3c10.33,0,19.04-12.43,19.04-30.18v-8.55c0-3.87-2.74-5.49-6.13-3.87-14.53,7.26-24.05,16.14-24.05,28.57,0,7.42,3.23,14.04,11.14,14.04Z"/><path d="M862.91,570.78c1.29-4.68,1.94-10.01,1.94-16.63v-92.16c0-10.65-2.58-10.81-5.16-10.81-4.04,0-9.36.97-10.97,1.13-1.13.16-1.61,0-1.61-.97,0-.65.48-1.13,1.94-1.45,7.58-1.61,20.5-7.59,23.56-7.75,1.45,0,2.26,1.13,2.26,2.74,0,14.04-.97,28.25-.97,42.13v17.75c0,2.26,1.93,2.42,3.07.48,5.16-8.72,11.62-16.79,19.69-16.79,13.24,0,22.11,15.82,22.11,41.96,0,29.05-9.52,48.26-32.93,48.26-7.59,0-24.05-3.39-22.92-7.91ZM872.6,442.15h-.16.16ZM889.71,575.3c12.59,0,19.53-12.11,19.53-41.32,0-24.21-7.1-37.28-17.43-37.28-8.88,0-17.92,10.81-17.92,28.73v29.54c0,14.36,6.78,20.34,15.82,20.34Z"/><path d="M935.22,577.08c-2.58,0-4.84.81-6.29.81-.64,0-1.29-.32-1.29-1.78.16-16.95-3.87-29.21-4.36-32.44-.32-1.29,0-1.94.97-1.94.81,0,1.13.48,1.45,1.78,5,17.43,6.94,32.28,26.79,32.28,8.23,0,12.11-5.49,12.11-12.59,0-10.49-4.84-16.46-19.37-29.21-13.07-11.3-17.27-17.11-17.27-25.82,0-11.46,8.23-19.69,19.37-19.69,5.97,0,8.88,1.45,13.72,1.45,2.91,0,5.33-.81,6.78-.81.64,0,1.29.32,1.29,1.61-.16,18.24,1.61,23.57,1.61,28.73,0,1.45-.48,1.94-1.13,1.94s-.97-.48-1.13-1.94c-2.91-20.5-8.72-28.25-21.63-28.25-6.78,0-11.3,5.81-11.3,13.24,0,8.39,5.65,13.4,16.14,22.11,14.37,12.27,20.34,19.37,20.34,30.5,0,14.37-9.04,21.63-19.85,21.63-8.55,0-12.1-1.61-16.95-1.61Z"/><path d="M759.73,618.82c-27.67-21.3-44.11-54.68-44.11-93.92s14.59-74.81,41.26-93.92v3.52c-20.29,19.96-30.36,53.34-30.36,90.4,0,34.72,11.57,68.77,33.21,90.4v3.52Z"/><path d="M973.05,615.29c21.64-21.63,33.21-55.68,33.21-90.4,0-37.07-10.06-70.44-30.36-90.4v-3.52c26.84,19.12,41.26,54,41.26,93.92s-16.27,72.62-44.11,93.92v-3.52Z"/></svg>
+        <div class="swatches" aria-hidden="true">
+          <span style="background:#FF6E42"></span><span style="background:#383532"></span><span style="background:#FFFFFF"></span>
+        </div>
+      </div>
+      <div class="body">
+        <span class="index">02</span>
+        <h2>Logos</h2>
+        <p class="text">The humyn (labs) lockup, the (humyn) mark and the wordmark in orange, black and white. SVG and transparent PNG.</p>
+        <div class="foot">
+          <span class="meta" data-meta>ZIP</span>
+          <span class="cta">Download <span class="icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M8 3v9M4 8l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+        </div>
+      </div>
+    </a>
+
+    <a class="card" data-asset="brandbook" href="#">
+      <div class="preview p-book">
+        <svg viewBox="67.42 379.42 945.16 321.16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M892.1,485.74c-10.12-11.23-23.69-16.85-40.69-16.85-9.22,0-17.81,1.97-25.78,5.91-5.72,2.83-10.87,6.47-15.44,10.91-1.9,1.86-5.09.48-5.1-2.17-.03-6.23-4.12-11.3-10.35-11.3h-31.7c-6.45,0-10.74,2.95-12.89,8.86l-26.65,64.37c-4.49,10.85-19.85,10.87-24.38.03l-26.85-64.4c-2.15-5.91-6.45-8.86-12.89-8.86h-5.21l-31.62-.29h-.22c-1.72-.02-3.4-.34-5.06-.83-5.02-1.47-10.58-2.24-16.75-2.24-9.4,0-18.28,2.42-26.65,7.25-8.37,4.83-15.59,11.19-21.68,19.06-3.94-8.41-9.55-14.91-16.85-19.47-7.3-4.56-16.32-6.85-27.06-6.85-8.51,0-16.22,1.99-23.16,5.97-6.94,3.99-13.04,9.06-18.33,15.24v-4.07c0-7.62-6.17-13.79-13.78-13.79h-.84c-9.13,0-18.12.1-27.22-.28-4.9-.2-10.3.58-13.59,4.22-4.81,5.32-2.81,16.18-2.81,23.03v47.93c0,13.42-6.93,25.89-18.33,32.98-7.3,4.52-15.07,6.78-23.29,6.78-10.57,0-18.98-3.42-25.24-10.27-6.27-6.85-9.4-16-9.4-27.46v-65.66c0-7.52-3.8-11.28-11.41-11.28h-3.22c-6.22,0-11.28,5.05-11.28,11.28v66.2c0,10.95,1.69,20.59,5.05,28.93,1.38,3.43-.44,7.21-4.08,7.83-3.64.62-6.55-2.09-6.55-5.49v-49.81c0-19.06-5.06-34.21-15.17-45.45-10.12-11.23-23.72-16.85-40.82-16.85-9.22,0-17.79,1.97-25.72,5.91-7.92,3.94-14.75,9.44-20.47,16.51v-66.19c0-6.22-5.05-11.28-11.28-11.28h-3.9c-7.16,0-10.74,3.76-10.74,11.28v172.13c0,7.51,3.58,11.28,10.74,11.28h3.9c6.22,0,11.28-5.05,11.28-11.28v-63.62c0-13.46,6.96-25.96,18.4-33.05,7.25-4.47,15.04-6.72,23.36-6.72,10.47,0,18.84,3.42,25.11,10.27,6.26,6.85,9.4,16,9.4,27.46v65.66c0,7.51,3.8,11.28,11.41,11.28h44.82c.51,0,1.02-.04,1.53-.08,3.77-.38,7.57-.36,11.19.77,5.65,1.77,11.82,2.67,18.54,2.67,9.22,0,17.79-1.97,25.72-5.91,5.71-2.84,10.85-6.48,15.43-10.9,1.9-1.85,5.09-.44,5.05,2.24-.12,6.19,5.89,11.22,12.07,11.22h2.56c6.23,0,11.28-5.05,11.28-11.28v-99.76c0-1.81,1.47-3.28,3.28-3.28s3.28,1.47,3.28,3.28v99.76c0,7.51,3.71,11.28,11.14,11.28h3.36c6.22,0,11.28-5.05,11.28-11.28v-68.32c0-11.8,5.93-22.8,15.78-29.3,5.86-3.85,12.46-5.77,19.81-5.77,10.11,0,17.79,3.31,23.02,9.94,5.24,6.62,7.86,15.89,7.86,27.79v65.66c0,7.51,3.8,11.28,11.41,11.28h3.09c6.22,0,11.28-5.05,11.28-11.28v-65.79c0-.72,0-1.45-.02-2.16-.21-11.8,5.65-22.88,15.48-29.41l.18-.12c5.96-3.93,12.6-5.91,19.94-5.91,10.11,0,17.79,3.31,23.02,9.94,5.23,6.62,7.86,15.89,7.86,27.79v65.66c0,7.51,3.8,11.28,11.41,11.28h3.09c7.61,0,11.41-3.76,11.41-11.28v-65.79c0-14.79-2.51-27.19-7.48-37.26h2.36c1.97,0,3.75,1.15,4.55,2.95l37.38,83.31c5.68,12.66,5.8,27.13.32,39.87-3.04,7.16-6.85,12.84-11.41,17.05-4.56,4.2-9.71,6.31-15.44,6.31-2.6,0-5.04-.38-7.32-1.14-2.28-.76-4.5-1.59-6.64-2.49-2.77-.98-5.32-.83-7.65.47-2.33,1.3-4.03,3.6-5.1,6.91l-.81,2.55c-.89,2.77-.94,5.48-.13,8.13.81,2.63,3.14,4.85,6.99,6.64,2.42,1.16,5.57,2.17,9.46,3.02,3.9.85,8.03,1.27,12.42,1.27,10.65,0,20.28-3.63,28.87-10.87,8.59-7.25,15.66-17.05,21.22-29.41l58.97-132.31c.62-1.39,2-2.29,3.52-2.29,2.13,0,3.86,1.73,3.86,3.86v99.19c0,7.51,3.71,11.28,11.14,11.28h3.36c6.22,0,11.28-5.05,11.28-11.28v-63.62c0-13.46,6.96-25.96,18.4-33.05,7.25-4.47,15.04-6.72,23.36-6.72,10.57,0,18.97,3.42,25.24,10.27,6.26,6.85,9.4,16,9.4,27.46v65.66c0,7.51,3.8,11.28,11.41,11.28h3.09c6.22,0,11.28-5.05,11.28-11.28v-66.06c0-19.06-5.06-34.21-15.17-45.45h-.05Z"/><path d="M146.63,627.4c-30.74-25.55-47.65-63.34-47.65-106.53,0-47.33,17.25-87.01,47.37-109.03v3.01c-22.91,22.64-35.53,60.28-35.53,106.02,0,40.5,13.05,77.95,35.83,102.8v3.74h0Z"/><path d="M145.87,412.75v1.91c-11.56,11.47-20.51,26.77-26.62,45.49-5.91,18.09-8.91,38.52-8.91,60.71,0,19.53,3.18,39.14,9.2,56.7,6.24,18.2,15.2,33.78,26.62,46.28v2.56c-30.16-25.45-46.74-62.85-46.74-105.54,0-23.03,4.28-45.08,12.37-63.73,8.07-18.61,19.53-33.54,34.07-44.38ZM146.8,410.93c-31.22,22.38-48.3,63.21-48.3,109.94s18.03,82.52,48.58,107.52v-4.9c-23.36-25.41-35.83-63.65-35.83-102.62,0-43.39,11.78-82.45,35.53-105.82v-4.12h0Z"/><path d="M933.38,623.66c22.77-24.84,35.83-62.3,35.83-102.8,0-45.73-12.62-83.37-35.53-106.01v-3.02c30.11,22.02,47.37,61.7,47.37,109.03,0,43.19-16.91,80.99-47.66,106.53v-3.74h0Z"/><path d="M934.14,412.75c14.55,10.84,26,25.77,34.07,44.38,8.09,18.66,12.37,40.7,12.37,63.73,0,42.7-16.58,80.1-46.73,105.54v-2.56c11.42-12.51,20.38-28.08,26.63-46.28,6.02-17.56,9.2-37.16,9.2-56.7,0-22.19-3-42.61-8.9-60.71-6.11-18.73-15.08-34.03-26.63-45.49v-1.91M933.21,410.93v4.12c23.76,23.36,35.53,62.43,35.53,105.82,0,38.97-12.47,77.21-35.83,102.62v4.9c30.55-25,48.58-63.04,48.58-107.52,0-46.73-17.08-87.56-48.3-109.94h0Z"/></svg>
+        <span class="tag">Brand book</span>
+      </div>
+      <div class="body">
+        <span class="index">03</span>
+        <h2>Brand book</h2>
+        <p class="text">How Humyn Labs looks, sounds and shows up: logo usage, colour, typography, imagery and voice.</p>
+        <div class="foot">
+          <span class="meta" data-meta>PDF</span>
+          <span class="cta">Download <span class="icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M8 3v9M4 8l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+        </div>
+      </div>
+    </a>
+
+  </section>
+
+  <section class="contact">
+    <p>Need an interview, a quote or a format that isn&rsquo;t here?</p>
+    <a class="contact-link" href="https://humynlabs.ai/contact-us">Press contact <span class="icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3.5 10.5 8 6 12.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+  </section>
+</main>
+
+<script>
+  /* ============================================================
+     PASTE YOUR GOOGLE DRIVE LINKS HERE
+     Use the normal "Share > Copy link" URL of each FILE
+     (e.g. https://drive.google.com/file/d/XXXX/view?usp=sharing).
+     Set sharing to "Anyone with the link".
+     The page converts it to a direct-download link automatically.
+     ============================================================ */
+  var MEDIA_KIT = {
+    fonts:     { url: "https://drive.google.com/file/d/1878E1-hvD6sT1dLCbAD-LTOhNuyV1dW6/view", meta: "ZIP · 1.2 MB" },
+    logos:     { url: "https://drive.google.com/file/d/1EgO_00jjTdzIjU5ph3LC8ySmymjligod/view", meta: "ZIP · 0.6 MB" },
+    brandbook: { url: "https://drive.google.com/file/d/1v6fWTTfZPkPiH2YBQbmAbzR9C26jkO6h/view?usp=drive_link", meta: "PDF · 71 MB" }
+  };
+
+  function toDirectDownload(url) {
+    if (!url || url.indexOf("PASTE_") === 0) return null;
+    // Google Docs / Slides / Sheets: export instead of view
+    var doc = url.match(/docs\.google\.com\/(document|presentation|spreadsheets)\/d\/([\w-]+)/);
+    if (doc) {
+      var fmt = doc[1] === "spreadsheets" ? "xlsx" : "pdf";
+      return "https://docs.google.com/" + doc[1] + "/d/" + doc[2] + "/export?format=" + fmt;
+    }
+    // Drive file links: /file/d/ID/..., open?id=ID, uc?id=ID
+    var m = url.match(/\/file\/d\/([\w-]+)/) || url.match(/[?&]id=([\w-]+)/);
+    if (m) return "https://drive.google.com/uc?export=download&id=" + m[1];
+    // Anything else (folder links, other hosts): use as-is
+    return url;
+  }
+
+  document.querySelectorAll(".card[data-asset]").forEach(function (card) {
+    var cfg = MEDIA_KIT[card.getAttribute("data-asset")];
+    var href = cfg && toDirectDownload(cfg.url);
+    var meta = card.querySelector("[data-meta]");
+    if (meta && cfg && cfg.meta) meta.textContent = cfg.meta;
+    if (href) {
+      card.href = href;
+      if (href.indexOf("drive.google.com/drive/folders") === -1) card.setAttribute("download", "");
+      else {
+        // Drive can't direct-download a folder, so open it in a new tab instead
+        card.target = "_blank"; card.rel = "noopener";
+        card.querySelector(".cta").firstChild.textContent = "Open in Drive ";
+        card.querySelector(".cta .icon").innerHTML = '<svg viewBox="0 0 16 16" fill="none"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      }
+      card.addEventListener("click", function () {
+        if (window.dataLayer) window.dataLayer.push({ event: "media_kit_download", asset: card.getAttribute("data-asset") });
+      });
+    } else {
+      card.setAttribute("aria-disabled", "true");
+      card.removeAttribute("href");
+      card.querySelector(".cta").firstChild.textContent = "Coming soon ";
+    }
+  });
+</script>
+</body>
+</html>
