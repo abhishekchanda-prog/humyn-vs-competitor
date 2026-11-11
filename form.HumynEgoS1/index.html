@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Register your interest in Humyn egoS1 — Humyn Labs</title>
-<meta name="description" content="Tell us what you're building. We're opening egoS1 to labs in stages and teams that register their interest hear from us first.">
+<title>Register to access Humyn egoS1 — Humyn Labs</title>
+<meta name="description" content="Tell us what you're working on and how you'd use egoS1. We're opening access to labs in stages and teams that apply hear from us first.">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://abhishekchanda-prog.github.io/humyn-vs-competitor/form.HumynEgoS1/">
-<meta property="og:title" content="Register your interest in Humyn egoS1">
-<meta property="og:description" content="Tell us what you're building. We're opening egoS1 to labs in stages and teams that register their interest hear from us first.">
+<meta property="og:title" content="Register to access Humyn egoS1">
+<meta property="og:description" content="Tell us what you're working on and how you'd use egoS1. We're opening access to labs in stages and teams that apply hear from us first.">
 <meta property="og:image" content="https://abhishekchanda-prog.github.io/humyn-vs-competitor/form.HumynEgoS1/og-image-v2.jpg">
 <meta property="og:image:width" content="1920">
 <meta property="og:image:height" content="1080">
 <meta property="og:site_name" content="Humyn Labs">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Register your interest in Humyn egoS1">
-<meta name="twitter:description" content="Tell us what you're building. We're opening egoS1 to labs in stages and teams that register their interest hear from us first.">
+<meta name="twitter:title" content="Register to access Humyn egoS1">
+<meta name="twitter:description" content="Tell us what you're working on and how you'd use egoS1. We're opening access to labs in stages and teams that apply hear from us first.">
 <meta name="twitter:image" content="https://abhishekchanda-prog.github.io/humyn-vs-competitor/form.HumynEgoS1/og-image-v2.jpg">
 
 <meta name="linkedin:owner" content="Humyn Labs">
@@ -223,6 +223,7 @@ form {
 .field select option { color: var(--ink); background: var(--surface); }
 .row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 @media (max-width: 560px) { .row { grid-template-columns: 1fr; } }
+.row.align-end { align-items: end; }
 
 .notice {
   background: var(--accent-soft);
@@ -322,6 +323,15 @@ button[type="submit"]:disabled { opacity: 0.6; cursor: not-allowed; }
 .other-input { margin-top: 10px; display: none; }
 .other-input.show { display: block; }
 .optional { text-transform: none; letter-spacing: 0; font-weight: 500; }
+.section-title {
+  font-family: 'Rethink Sans', sans-serif;
+  font-weight: 800;
+  font-size: 17px;
+  margin: 34px 0 18px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+}
+.section-title:first-child { margin-top: 0; padding-top: 0; border-top: none; }
 
 footer {
   text-align: center;
@@ -418,10 +428,11 @@ footer {
   </div>
   <div class="wrap">
   <div id="formView">
-    <h1>Register your interest in Humyn egoS1</h1>
-    <p class="intro">Tell us what you're building. We're opening egoS1 to labs in stages and teams that register their interest hear from us first.</p>
+    <h1>Register to access Humyn egoS1</h1>
+    <p class="intro">Tell us what you're working on and how you'd use egoS1. We're opening access to labs in stages and teams that apply hear from us first.</p>
 
     <form id="loiForm" novalidate>
+      <h2 class="section-title">About you</h2>
       <div class="row">
         <div class="field">
           <label for="fullName">Full name <span class="req">*</span></label>
@@ -438,54 +449,100 @@ footer {
           <input type="text" id="organization" required autocomplete="organization">
         </div>
         <div class="field">
-          <label for="role">Your role</label>
-        <select id="role">
-          <option value="" selected>Select your role</option>
-          <option value="Researcher">Researcher</option>
+          <label for="role">Your role <span class="req">*</span></label>
+        <select id="role" required>
+          <option value="" disabled selected>Select your role</option>
+          <option value="Lab lead or PI">Lab lead or PI</option>
+          <option value="Researcher or research scientist">Researcher or research scientist</option>
+          <option value="PhD student">PhD student</option>
           <option value="Robotics or model engineer">Robotics or model engineer</option>
-          <option value="Lab lead">Lab lead</option>
           <option value="Data or ops lead">Data or ops lead</option>
           <option value="Other">Other</option>
         </select>
           <input type="text" id="roleOther" class="other-input" placeholder="Your role">
         </div>
       </div>
+      <div class="row align-end">
+        <div class="field">
+          <label for="website">Lab or personal website <span class="optional">(optional)</span></label>
+          <input type="url" id="website" autocomplete="url">
+        </div>
+        <div class="field">
+          <label for="country">Country <span class="optional">(optional)</span></label>
+          <input type="text" id="country" autocomplete="country-name">
+        </div>
+      </div>
+
+      <h2 class="section-title">Your work</h2>
       <div class="field">
         <label for="building">What are you building or researching? <span class="req">*</span></label>
-        <textarea id="building" required></textarea>
+        <textarea id="building" required placeholder="The problem you're working on and what you want egoS1 to help you do"></textarea>
       </div>
       <div class="field">
-        <label>How would you use egoS1? <span class="hint">(select all that apply)</span></label>
-        <div class="choices" id="useCases">
-          <label class="choice"><input type="checkbox" name="useCases" value="Training data"><span>Training data</span></label>
-          <label class="choice"><input type="checkbox" name="useCases" value="Dataset collection"><span>Dataset collection</span></label>
-          <label class="choice"><input type="checkbox" name="useCases" value="Benchmarking capture hardware"><span>Benchmarking capture hardware</span></label>
+        <label for="researchArea">Research area <span class="req">*</span></label>
+        <select id="researchArea" required>
+          <option value="" disabled selected>Select your research area</option>
+          <option value="Robot learning and manipulation">Robot learning and manipulation</option>
+          <option value="Egocentric perception">Egocentric perception</option>
+          <option value="SLAM and mapping">SLAM and mapping</option>
+          <option value="Human activity understanding">Human activity understanding</option>
+          <option value="Vision-language-action models">Vision-language-action models</option>
+          <option value="Datasets and benchmarks">Datasets and benchmarks</option>
+          <option value="Other">Other</option>
+        </select>
+        <input type="text" id="areaOther" class="other-input" placeholder="Your research area">
+      </div>
+
+      <h2 class="section-title">How you'd use egoS1</h2>
+      <div class="field">
+        <label>What would you use egoS1 for? <span class="req">*</span> <span class="hint">(select all that apply)</span></label>
+        <div class="choices">
+          <label class="choice"><input type="checkbox" name="useCases" value="Collecting training data"><span>Collecting training data</span></label>
+          <label class="choice"><input type="checkbox" name="useCases" value="Building a dataset or benchmark"><span>Building a dataset or benchmark</span></label>
+          <label class="choice"><input type="checkbox" name="useCases" value="Evaluating or benchmarking capture hardware"><span>Evaluating or benchmarking capture hardware</span></label>
+          <label class="choice"><input type="checkbox" name="useCases" value="Prototyping or demos"><span>Prototyping or demos</span></label>
           <label class="choice"><input type="checkbox" name="useCases" value="Other"><span>Other</span></label>
         </div>
-        <input type="text" id="useOther" class="other-input" placeholder="How else would you use it?">
+        <input type="text" id="useOther" class="other-input" placeholder="What else would you use it for?">
       </div>
       <div class="field">
-        <label>What matters most to you in a capture device? <span class="hint">(choose up to 2)</span></label>
-        <div class="choices" id="priorities">
+        <label>What matters most to you in a capture device? <span class="optional">(optional)</span> <span class="hint">(choose up to 2)</span></label>
+        <div class="choices">
           <label class="choice"><input type="checkbox" name="priorities" value="Camera-IMU sync"><span>Camera-IMU sync</span></label>
           <label class="choice"><input type="checkbox" name="priorities" value="Field of view"><span>Field of view</span></label>
+          <label class="choice"><input type="checkbox" name="priorities" value="Global shutter"><span>Global shutter</span></label>
+          <label class="choice"><input type="checkbox" name="priorities" value="Wireless upload"><span>Wireless upload</span></label>
+          <label class="choice"><input type="checkbox" name="priorities" value="Wearability and weight"><span>Wearability and weight</span></label>
           <label class="choice"><input type="checkbox" name="priorities" value="Calibration and documentation"><span>Calibration and documentation</span></label>
           <label class="choice"><input type="checkbox" name="priorities" value="Raw data and open formats"><span>Raw data and open formats</span></label>
-          <label class="choice"><input type="checkbox" name="priorities" value="Wireless upload to a server"><span>Wireless upload to a server</span></label>
-          <label class="choice"><input type="checkbox" name="priorities" value="Wearability and form factor"><span>Wearability and form factor</span></label>
           <label class="choice"><input type="checkbox" name="priorities" value="Other"><span>Other</span></label>
         </div>
         <input type="text" id="priorityOther" class="other-input" placeholder="What else matters to you?">
       </div>
-      <div class="row">
+      <div class="field">
+        <label>What outcome do you expect? <span class="optional">(optional)</span> <span class="hint">(select all that apply)</span></label>
+        <div class="choices">
+          <label class="choice"><input type="checkbox" name="outcomes" value="Research paper"><span>Research paper</span></label>
+          <label class="choice"><input type="checkbox" name="outcomes" value="Open dataset or benchmark"><span>Open dataset or benchmark</span></label>
+          <label class="choice"><input type="checkbox" name="outcomes" value="Open-source code or model"><span>Open-source code or model</span></label>
+          <label class="choice"><input type="checkbox" name="outcomes" value="Product or prototype"><span>Product or prototype</span></label>
+          <label class="choice"><input type="checkbox" name="outcomes" value="Internal use only"><span>Internal use only</span></label>
+          <label class="choice"><input type="checkbox" name="outcomes" value="Other"><span>Other</span></label>
+        </div>
+        <input type="text" id="outcomeOther" class="other-input" placeholder="What other outcome do you expect?">
+      </div>
+
+      <h2 class="section-title">Access</h2>
+      <div class="row align-end">
         <div class="field">
-          <label for="units">How many units could your team use? <span class="req">*</span></label>
+          <label for="units">How many units would you need? <span class="req">*</span></label>
         <select id="units" required>
           <option value="" disabled selected>Select</option>
-          <option value="0-10">0-10</option>
-          <option value="10-100">10-100</option>
-          <option value="100-1000">100-1000</option>
-          <option value="1000-10000">1000-10000</option>
+          <option value="1">1</option>
+          <option value="2 to 10">2 to 10</option>
+          <option value="11 to 100">11 to 100</option>
+          <option value="101 to 1,000">101 to 1,000</option>
+          <option value="More than 1,000">More than 1,000</option>
         </select>
         </div>
         <div class="field">
@@ -500,7 +557,7 @@ footer {
         </div>
       </div>
       <div class="field">
-        <label for="recordingExport">How would you want recordings to leave the device?</label>
+        <label for="recordingExport">How would you want recordings to leave the device? <span class="optional">(optional)</span></label>
         <select id="recordingExport">
           <option value="" selected>Select an option</option>
           <option value="Wireless upload to our own storage">Wireless upload to our own storage</option>
@@ -509,12 +566,31 @@ footer {
         </select>
       </div>
       <div class="field">
+        <label for="dataVolume">Roughly how much data do you plan to capture? <span class="optional">(optional)</span></label>
+        <select id="dataVolume">
+          <option value="" selected>Select an option</option>
+          <option value="Under 10 hours">Under 10 hours</option>
+          <option value="10 to 100 hours">10 to 100 hours</option>
+          <option value="100 to 1,000 hours">100 to 1,000 hours</option>
+          <option value="More than 1,000 hours">More than 1,000 hours</option>
+          <option value="Not sure yet">Not sure yet</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Would you share findings and feedback on egoS1 with us? <span class="optional">(optional)</span></label>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="shareFeedback" value="Yes, a public review or comparison"><span>Yes, a public review or comparison</span></label>
+          <label class="choice"><input type="radio" name="shareFeedback" value="Yes, privately with Humyn"><span>Yes, privately with Humyn</span></label>
+          <label class="choice"><input type="radio" name="shareFeedback" value="Not sure yet"><span>Not sure yet</span></label>
+        </div>
+      </div>
+      <div class="field">
         <label for="contactNumber">Contact number <span class="optional">(optional)</span></label>
         <input type="tel" id="contactNumber" autocomplete="tel">
       </div>
 
       <div class="notice">
-        <strong>Non-binding statement.</strong> This form is a non-binding expression of interest only and does not constitute a purchase order or contract.
+        <strong>Non-binding expression of interest.</strong> This is not a purchase order or contract.
       </div>
 
       <label class="ack">
@@ -533,7 +609,7 @@ footer {
     <h2>Thanks — you're on the list</h2>
     <p>Your interest in Humyn egoS1 is registered. We're opening egoS1 to labs in stages, and we'll be in touch as access opens.</p>
   </div>
-  <footer>Humyn Labs &middot; egoS1 Register your interest</footer>
+  <footer>Humyn Labs &middot; egoS1 Register to access</footer>
   </div>
 </div>
 
@@ -561,9 +637,14 @@ function toggleOther(show, otherId) {
 document.getElementById('role').addEventListener('change', function () {
   toggleOther(this.value === 'Other', 'roleOther');
 });
-document.querySelectorAll('input[name="useCases"]').forEach(function (el) {
-  el.addEventListener('change', function () {
-    toggleOther(checkedValues('useCases').indexOf('Other') !== -1, 'useOther');
+document.getElementById('researchArea').addEventListener('change', function () {
+  toggleOther(this.value === 'Other', 'areaOther');
+});
+[['useCases', 'useOther'], ['outcomes', 'outcomeOther']].forEach(function (pair) {
+  document.querySelectorAll('input[name="' + pair[0] + '"]').forEach(function (el) {
+    el.addEventListener('change', function () {
+      toggleOther(checkedValues(pair[0]).indexOf('Other') !== -1, pair[1]);
+    });
   });
 });
 document.querySelectorAll('input[name="priorities"]').forEach(function (el) {
@@ -575,27 +656,37 @@ document.querySelectorAll('input[name="priorities"]').forEach(function (el) {
     toggleOther(picked.indexOf('Other') !== -1, 'priorityOther');
   });
 });
+function selectWithOther(selId, otherId) {
+  const v = document.getElementById(selId).value;
+  const other = document.getElementById(otherId).value.trim();
+  return (v === 'Other' && other) ? 'Other: ' + other : v;
+}
+function val(id) { return document.getElementById(id).value.trim(); }
 
 form.addEventListener('submit', function (e) {
   e.preventDefault();
 
-  const fullName = document.getElementById('fullName').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const organization = document.getElementById('organization').value.trim();
-  const roleSel = document.getElementById('role').value;
-  const roleOther = document.getElementById('roleOther').value.trim();
-  const role = (roleSel === 'Other' && roleOther) ? 'Other: ' + roleOther : roleSel;
-  const building = document.getElementById('building').value.trim();
+  const fullName = val('fullName');
+  const email = val('email');
+  const organization = val('organization');
+  const role = selectWithOther('role', 'roleOther');
+  const website = val('website');
+  const country = val('country');
+  const building = val('building');
+  const researchArea = selectWithOther('researchArea', 'areaOther');
   const useCases = withOther(checkedValues('useCases'), 'useOther').join('; ');
   const priorities = withOther(checkedValues('priorities'), 'priorityOther').join('; ');
-  const units = document.getElementById('units').value;
-  const timing = document.getElementById('timing').value;
-  const recordingExport = document.getElementById('recordingExport').value;
-  const contactNumber = document.getElementById('contactNumber').value.trim();
+  const outcomes = withOther(checkedValues('outcomes'), 'outcomeOther').join('; ');
+  const units = val('units');
+  const timing = val('timing');
+  const recordingExport = val('recordingExport');
+  const dataVolume = val('dataVolume');
+  const shareFeedback = checkedValues('shareFeedback').join('');
+  const contactNumber = val('contactNumber');
   const ack = document.getElementById('ack').checked;
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
 
-  if (!fullName || !email || !organization || !building || !units || !timing || !ack) {
+  if (!fullName || !email || !organization || !role || !building || !researchArea || !useCases || !units || !timing || !ack) {
     errorMsg.textContent = 'Please fill in all required fields before submitting.';
     errorMsg.style.display = 'block';
     return;
@@ -611,9 +702,10 @@ form.addEventListener('submit', function (e) {
   submitBtn.textContent = 'Submitting…';
 
   const payload = {
-    formVersion: 2,
-    fullName, email, organization, role, building,
-    useCases, priorities, units, timing, recordingExport, contactNumber
+    formVersion: 3,
+    fullName, email, organization, role, website, country, building, researchArea,
+    useCases, priorities, outcomes, units, timing, recordingExport, dataVolume,
+    shareFeedback, contactNumber
   };
 
   fetch(GAS_URL, {
